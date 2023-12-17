@@ -10,6 +10,18 @@ html, body {
   scroll-behavior: smooth;
 }
 
+.animate-opacity {
+  animation:opac 0.8s
+}
+
+@keyframes opac {
+  from {
+    opacity:0
+  } to {
+    opacity:1
+  }
+}
+
 #index {
   overflow: hidden;
 }
@@ -219,6 +231,15 @@ nav a:hover {
 @media (max-width: 768px) {
   .navBar {
       display: none;
+  }
+  body {
+    overflow: auto !important;
+  }
+  .edu {
+    display: none;
+  }
+  .abt {
+    display: none;
   }
 }
 
