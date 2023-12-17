@@ -1,0 +1,151 @@
+/* Experience Stylnig */
+@import url('https://fonts.cdnfonts.com/css/sf-mono');
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+html, body, .content {
+  height: 100vh;
+}
+
+.experience-desc {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  gap: 2rem;
+  width: 70%;
+}
+
+.my-experience {
+  font-size: 60px;
+  margin-bottom: 0px;
+}
+
+.get-resume {
+  background-color: transparent;
+  border: 2px cadetblue solid;
+  color: cadetblue;
+  border-radius: 10px;
+  width: 16%;
+  font-size: 16px;
+  padding: 10px;
+  cursor:pointer;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.get-resume:hover {
+  transition: 0.3s ease-in-out;
+  color: white;
+  filter: drop-shadow(0 0 4px cadetblue);
+  background-color: cadetblue;
+}
+
+@media (max-width: 768px) {
+  .get-resume {
+    width: 33%;
+  }
+}
+
+@media (max-width: 480px) {
+  .get-resume {
+    width: 50%;
+  }
+}
+
+.icon {
+  padding-right: 0.5rem;
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+table {
+  box-shadow: 0 0 3px 3px rgba(95, 158, 160, 0.651);
+  border-radius: 6px;
+}
+
+th i {
+  padding-right: 0.5rem;
+}
+
+tr i {
+  padding-right: 0.3rem;
+}
+
+th {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem 0rem 1rem;
+  text-align: left;
+}
+
+td {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+td img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.job-row {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+.job-details {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+}
+
+.job-details h3 {
+  margin: 0;  
+}
+
+.job-details p {
+  margin-top: 3px;
+  opacity: 0.7;
+}
+
+.job-details a {
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.job-details a:hover {
+  cursor: pointer;
+  color: #ffca28; /* Change the color to any desired color when hovering */
+  filter: drop-shadow(0 0 2px #ffca28); /* Optional: Add a drop shadow effect */
+}
+
+@media (max-width: 768px) {
+  .experience-desc {
+    width: 80%;
+  }
+  .experience-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  table {
+    width: 100%;
+  }
+
+  html, body, .content {
+    height: fit-content;
+  }
+
+  .stack-container {
+    margin-bottom: 6rem;
+  }
+}
+
+/* <---> */

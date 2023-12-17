@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/Main.css">
+    <link rel="stylesheet" href="src/css/Projects.css">
+    <link rel="icon" type="image/x-icon" href="src/img/favicon.ico">
+    <script src="https://kit.fontawesome.com/f7c8be4779.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.card');
+        let delay = 500;
+
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('fade-in');
+            }, index * delay);
+            });
+        });
+    </script>
+    <title>Jacob Pantuso | Projects</title>
+</head>
+<body>
+    <nav class="navBar">
+        <img src="src/img/logo.png" class='logo' alt='JLogo'></img>
+        <div class='links'>
+            <h1><a href='index.html'>About</a></h1>
+            <h1><a href='experience.html'>Experience</a></h1>
+            <h1><a href='projects.html'>Projects</a></h1>
+        </div>
+    </nav>
+    <nav class="mobile-nav">
+        <img src="src/img/logo.png" class='logo' alt='JLogo'></img>
+        <i class="fas fa-bars" id="nav-toggle"></i>
+        <div class='mobile-menu'>
+            <div class='links mobile'>
+                <h1><a href='index.html'>About</a></h1>
+                <h1><a href='experience.html'>Experience</a></h1>
+                <h1><a href='projects.html'>Projects</a></h1>
+            </div>
+        </div>
+    </nav>
+    <div class="content">
+        <div class='stack-container'>
+            <h1 class="my-projects"><span class="diff-col">Projects</span></h1> 
+            <p>This page is updated frequently, with featured projects.</p>
+            <a href="https://github.com/JacobPantuso?tab=repositories" target="_blank" class="view-more-projects">View All Projects &nbsp;<i class="fas fas fa-external-link-alt"></i></a>
+            <div class="projects-container">
+                <div id="first" class="card">
+                    <div class="card-img">
+                        <img src="src/img/pingu.png">
+                    </div>
+                    <div class="card-desc">
+                        <div class="card-text left">
+                            <div class="title-row">
+                                <h2>Pingu</h2>
+                                <div class="languages">
+                                    <i class="fab fa-js"></i>
+                                    <i class="fab fa-discord"></i>
+                                </div>
+                            </div>
+                            <p>A moderation discord bot coded using the Discord.js library.</p>
+                            <div class="github-stats">
+                                <p><b>Last Updated:</b><span id="first-last-updated"></span></p>
+                                <p id="separator">|</p>
+                                <p><b>Total Commits:</b><span id="first-number-of-commits"></span></p>
+                            </div>
+                        </div>
+                        <div class="card-text right">
+                            <a class="view-more" href="https://www.github.com/JacobPantuso/Pingu" target="_blank"><i class="fab fa-github"></i> View More</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="second" class="card">
+                    <div class="card-img">
+                        <img src="src/img/hyper.png">
+                    </div>
+                    <div class="card-desc">
+                        <div class="card-text left">
+                            <div class="title-row">
+                                <h2>Hyper</h2>
+                                <div class="languages">
+                                    <i class="fab fa-js"></i>
+                                    <i class="fa fab fa-windows"></i>
+                                </div>
+                            </div>
+                            <p class="long">A super lightweight VSCode theme with a dynamic visual palette combining bold contrasts and electrifying accents to enhance your coding experience.</p>
+                            <div class="github-stats">
+                                <p><b>Last Updated:</b><span id="second-last-updated"></span></p>
+                                <p id="separator">|</p>
+                                <p><b>Total Commits:</b><span id="second-number-of-commits"></span></p>
+                            </div>
+                        </div>
+                        <div class="card-text right">
+                            <a class="view-more wip"><i class="fab fa-github"></i> View More</a>
+                        </div>
+                    </div>
+                </div>    
+                <div id="third" class="card">
+                    <div class="card-img">
+                        <img src="src/img/foodie.png">
+                    </div>
+                    <div class="card-desc">
+                        <div class="card-text left">
+                            <div class="title-row">
+                                <h2>Foodie</h2>
+                                <div class="languages">
+                                    <i class="fab fab fa-swift"></i>
+                                    <i class="fab fab fa-apple"></i>
+                                </div>
+                            </div>
+                            <p>A hyper-local app where you get to review your favourite restaurants for others to see.</p>
+                            <div class="github-stats">
+                                <p><b>Last Updated:</b><span id="third-last-updated"></span></p>
+                                <p id="separator">|</p>
+                                <p><b>Total Commits:</b><span id="third-number-of-commits"></span></p>
+                            </div>
+                        </div>
+                        <div class="card-text right">
+                            <a class="view-more wip"><i class="fab fa-github"></i> View More</a>
+                        </div>
+                    </div>
+                </div>    
+                <div id="fourth" class="card">
+                    <div class="card-img">
+                        <img src="src/img/weather-react.png">
+                    </div>
+                    <div class="card-desc">
+                        <div class="card-text left">
+                            <div class="title-row">
+                                <h2>Weather React</h2>
+                                <div class="languages">
+                                    <i class="fab fa-js"></i>
+                                    <i class="fab fa-discord"></i>
+                                </div>
+                            </div>
+                            <p>A data-driven weather webpage built with ReactJS to provide you with accurate weather data.</p>
+                            <div class="github-stats">
+                                <p><b>Last Updated:</b><span id="fourth-last-updated"></span></p>
+                                <p id="separator">|</p>
+                                <p><b>Total Commits:</b><span id="fourth-number-of-commits"></span></p>
+                            </div>
+                        </div>
+                        <div class="card-text right">
+                            <a class="view-more" href="https://www.github.com/JacobPantuso/weather-react" target="_blank"><i class="fab fa-github"></i> View More</a>
+                        </div>
+                    </div>
+                </div>    
+                <div id="fifth" class="card">
+                    <div class="card-img">
+                        <img src="src/img/codebook.png">
+                    </div>
+                    <div class="card-desc">
+                        <div class="card-text left">
+                            <div class="title-row">
+                                <h2>Codebook.dev</h2>
+                                <div class="languages">
+                                    <i class="fab fa-html5"></i>
+                                    <i class="fab fa-css3"></i>
+                                    <i class="fab fa-js"></i>
+                                    <i class="fab fab fa-react"></i>
+                                </div>
+                            </div>
+                            <p>An extremely versatile and easy-to-use code editor and compiler. Codebook.dev makes coding online easier.</p>
+                            <div class="github-stats">
+                                <p><b>Last Updated:</b><span id="fifth-last-updated"></span></p>
+                                <p id="separator">|</p>
+                                <p><b>Total Commits:</b><span id="fifth-number-of-commits"></span></p>
+                            </div>
+                        </div>
+                        <div class="card-text right">
+                            <a class="view-more" href="https://www.github.com/JacobPantuso/Pingu" target="_blank"><i class="fab fa-github"></i> View More</a>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div>
+        <footer>
+            <div class='icon-row'>
+                <a class="icon" href='https://www.github.com/JacobPantuso' target='_blank'><i class="fab fa-github"></i></a>
+                <a class="icon" href='https://www.linkedin.com/in/jacob-pantuso-054b06156/' target='_blank'><i class="fab fa-linkedin"></i></a>
+                <a class="icon" href='mailto:jacobpantuso@outlook.ca' target='_blank'><i class="fas far fa-envelope"></i></a>
+            </div>
+            &copy; 2023 Jacob Pantuso - All Rights Reserved
+        </footer>
+    </div>
+</body>
+<script src="src/js/fetch.js"></script>
+<script src="src/js/script.js"></script>
+</html>

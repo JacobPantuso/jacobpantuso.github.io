@@ -1,0 +1,110 @@
+/* About Stylnig */
+#about {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    text-align: left;
+    min-height: 100vh;
+    width: 60%;
+    margin: auto;
+    gap: 3rem;
+  }
+
+#about img {
+  width: 350px;
+  opacity: 0.5;
+}
+
+footer {
+  margin: 0;
+}
+
+.left-text {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.hello {
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 60px;
+  margin-bottom: 0px;
+}
+
+.diff-col {
+  color: rgb(3, 179, 179);
+  text-shadow: 0 0 5px rgba(3, 179, 179, 0.7);
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.icon-row {
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+}
+
+.icon {
+  font-size: 20px;
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.icon:hover {
+  cursor: pointer;
+  color: #ffca28; /* Change the color to any desired color when hovering */
+  filter: drop-shadow(0 0 4px #ffca28); /* Optional: Add a drop shadow effect */
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(3, 179, 179, 0.7);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(3, 179, 179, 1); /* Adjust the glow strength and color as needed */
+  }
+}
+
+#education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hello-desc {
+  margin-top: 1.3rem;
+  margin-bottom: 2rem;
+  width: 50%;
+} 
+
+.grad-space {
+  margin-bottom: 0px;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+  #about {
+    width: 100%;
+    text-align: center;
+  }
+  .image-container {
+    display: none;
+  }
+  .icon-row {
+    justify-content: center;
+  }
+  .hello-desc {
+    width: 90%;
+  }
+  table {
+    width: 90% !important;
+  }
+}
+/* <---> */

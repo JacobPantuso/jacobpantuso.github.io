@@ -1,0 +1,264 @@
+@import url('https://fonts.cdnfonts.com/css/sf-mono');
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+html, body {
+  background-color: rgb(16, 35, 65);
+  color: rgb(94, 150, 150);
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+#index {
+  overflow: hidden;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: auto;
+  height: 100%;
+}
+
+.stack-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.main {
+  margin-top: -100px;
+}
+
+.initial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.separator {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+}
+
+.separator h3 {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.separator i {
+  font-size: 30px;
+}
+
+.separator a:hover {
+  color: cadetblue; /* Change the color to any desired color when hovering */
+  filter: drop-shadow(0 0 4px cadetblue); /* Optional: Add a drop shadow effect */
+  animation: glow 0.5s ease-in-out infinite alternate;
+}
+
+.edu {
+  bottom: 0;
+  margin-bottom: 20px;
+}
+
+.abt {
+  top: 0;
+  margin-top: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar Styling */
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 50px 0px 20px;
+  align-items: center;
+  background-color: rgb(16, 35, 65);
+  z-index: 1000;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.5s ease-in-out;
+}
+
+nav a:hover {
+  color: rgb(95, 212, 212);
+  transition: 0.5s ease-in-out;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  font-size: 12px;
+  font-family: 'SF Pro Display', sans-serif;
+  color: rgb(94, 150, 150);
+}
+
+.logo {
+  width: 100px;
+  opacity: 50%;
+  transition: 0.5s ease-in-out;
+}
+
+.logo:hover {
+  opacity: 100%;
+  transition: 0.5s ease-in-out;
+}
+
+/* <---> */
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* For WebKit browsers (like Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(16, 35, 65);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(94, 150, 150); /* Change scrollbar thumb color here */
+  border-radius: 3px;
+}
+
+/* For Firefox */
+/* Note: Firefox uses a different syntax for scrollbar styling */
+/* You may need to use vendor prefixes for older versions of Firefox */
+/* This is just an example; adjust the colors and styles as needed */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1; /* Change thumb and track colors */
+}
+
+*::-moz-scrollbar {
+  width: 6px;
+}
+
+*::-moz-scrollbar-track {
+  background: #f1f1f1; /* Change scrollbar track color here */
+}
+
+*::-moz-scrollbar-thumb {
+  background: #888; /* Change scrollbar thumb color here */
+  border-radius: 3px;
+}
+
+.diff-col {
+  color: rgb(3, 179, 179);
+  text-shadow: 0 0 5px rgba(3, 179, 179, 0.7);
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.icon-row {
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
+}
+
+.icon {
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  cursor: pointer;
+  color: #ffca28;
+  filter: drop-shadow(0 0 4px #ffca28);
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(3, 179, 179, 0.7);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(3, 179, 179, 1); /* Adjust the glow strength and color as needed */
+  }
+}
+
+@media (max-width: 768px) {
+  .navBar {
+      display: none;
+  }
+}
+
+.mobile-nav {
+  display: flex;
+  z-index: 1000;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 110px;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 20px 20px -2px rgb(16, 35, 65);
+  background-color: rgb(16, 35, 65);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.mobile-menu.show {
+  opacity: 0.9;
+}
+
+#nav-toggle {
+  cursor: pointer;
+}
+
+.links.mobile {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 769px) {
+  .mobile-nav {
+      display: none;
+  }
+}
