@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const repositories = ['Pingu', 'Hyper', 'Foodie', 'weather-react', 'codebook.dev'];
+    const repositories = ['Pingu', 'hyper-theme', 'Foodie', 'weather-react', 'codebook.dev'];
     repositories.forEach((repo, index) => fetchGitHubStats(repo, index));
 });
 
