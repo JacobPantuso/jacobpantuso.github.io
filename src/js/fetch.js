@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const repositories = ['Pingu', 'hyper-theme', 'Foodie', 'weather-react', 'codebook.dev'];
+    const repositories = ['EcoHub', 'hyper-theme', 'Foodie', 'weather-react', 'codebook.dev', 'Pingu'];
     repositories.forEach((repo, index) => fetchGitHubStats(repo, index));
 });
 
 function fetchGitHubStats(repositoryName, index) {
     const repoUrl = `https://api.github.com/repos/JacobPantuso/${repositoryName}`;
-    const suffix = ['first', 'second', 'third', 'fourth', 'fifth'][index];
+    const suffix = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'][index];
 
     // Fetch repository details
     fetch(`${repoUrl}`)
