@@ -145,13 +145,13 @@
         '#hero-links a:hover { color: white !important; transform: scale(1.15); }',
         /* --- Mobile (≤ 767px) --- */
         '@media (max-width: 767px) {',
-        '  #scroll-container { padding: 16px !important; scroll-snap-type: y proximity !important; scroll-padding-top: 16px !important; }',
+        '  #scroll-container { padding: 16px !important; scroll-snap-type: y proximity !important; scroll-padding-top: 16px !important; -webkit-overflow-scrolling: touch; }',
         '  #hero-section { width: 100% !important; padding: 28px 20px !important; height: auto !important; min-height: calc(100svh - 32px); }',
         '  #hero-name-row { flex-direction: column !important; gap: 4px !important; }',
         '  #hero-name-row p, #hero-name-row div, #hero-name-row span { font-size: clamp(2rem, 9vw, 2.5rem) !important; line-height: 1.05 !important; }',
         '  #hero-role-badge { white-space: normal !important; text-align: center !important; justify-content: center !important; }',
-        '  #projects-section { height: auto !important; min-height: 100svh; padding: 24px 0 !important; }',
-        '  #about-section { height: auto !important; min-height: 100svh; align-items: stretch !important; }',
+        '  #projects-section { height: auto !important; min-height: 100svh; padding: 24px 0 !important; scroll-snap-stop: normal !important; }',
+        '  #about-section { height: auto !important; min-height: 100svh; align-items: stretch !important; scroll-snap-align: none !important; scroll-snap-stop: normal !important; }',
         '  #who-am-i { flex-direction: column !important; align-items: center !important; gap: 24px !important; padding: 20px !important; width: 100% !important; box-sizing: border-box; }',
         '  #who-am-i-text { width: 100% !important; max-width: 100% !important; }',
         '  #who-am-i-text p, #who-am-i-text div { max-width: 100% !important; }',
@@ -424,6 +424,90 @@
             container.scrollTop += e.deltaY;
         }
     }, { passive: false });
+
+    // iPhone gesture snapping: quick swipes advance sections, held drags snap back.
+    function isSmallScreen() {
+        return window.matchMedia('(max-width: 767px)').matches;
+    }
+    var touchStartY = 0;
+    var touchLastY = 0;
+    var touchStartTime = 0;
+    var touchStartTop = 0;
+
+    function getSnapOffset() {
+        return isSmallScreen() ? 16 : 72;
+    }
+
+    function getAnchors() {
+        var snapOffset = getSnapOffset();
+        return [
+            0,
+            Math.max(0, projectsEl.offsetTop - snapOffset),
+            Math.max(0, aboutEl.offsetTop - snapOffset)
+        ];
+    }
+
+    function nearestAnchorIndex(value, anchors) {
+        var idx = 0;
+        var dist = Math.abs(value - anchors[0]);
+        for (var i = 1; i < anchors.length; i++) {
+            var d = Math.abs(value - anchors[i]);
+            if (d < dist) { dist = d; idx = i; }
+        }
+        return idx;
+    }
+
+    function smoothSnapTo(top) {
+        container.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }
+
+    container.addEventListener('touchstart', function(e) {
+        if (!isSmallScreen() || !e.touches || e.touches.length === 0) return;
+        touchStartY = e.touches[0].clientY;
+        touchLastY = touchStartY;
+        touchStartTime = Date.now();
+        touchStartTop = container.scrollTop;
+    }, { passive: true });
+
+    container.addEventListener('touchmove', function(e) {
+        if (!isSmallScreen() || !e.touches || e.touches.length === 0) return;
+        touchLastY = e.touches[0].clientY;
+    }, { passive: true });
+
+    container.addEventListener('touchend', function() {
+        if (!isSmallScreen()) return;
+
+        var anchors = getAnchors();
+        var aboutTop = anchors[2];
+
+        // Once user is in About, keep free-scroll behavior there.
+        if (touchStartTop >= aboutTop - 8) return;
+
+        var duration = Date.now() - touchStartTime;
+        var deltaY = touchStartY - touchLastY;
+        var absDelta = Math.abs(deltaY);
+        var velocity = absDelta / Math.max(duration, 1); // px/ms
+
+        var startIdx = nearestAnchorIndex(touchStartTop, anchors);
+        var currentIdx = nearestAnchorIndex(container.scrollTop, anchors);
+
+        var isQuickSwipe = (duration < 260 && absDelta > 28) || velocity > 0.65;
+        var isHeldGesture = duration > 380;
+
+        if (isHeldGesture) {
+            smoothSnapTo(anchors[startIdx]);
+            return;
+        }
+
+        if (isQuickSwipe) {
+            var direction = deltaY > 0 ? 1 : -1;
+            var targetIdx = Math.max(0, Math.min(anchors.length - 1, startIdx + direction));
+            smoothSnapTo(anchors[targetIdx]);
+            return;
+        }
+
+        smoothSnapTo(anchors[currentIdx]);
+    }, { passive: true });
 
     function setLinkVisible(link, visible, isFirst) {
         link.style.opacity = visible ? '1' : '0';
