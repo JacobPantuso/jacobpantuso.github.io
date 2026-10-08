@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>myIONIQ Getting Started – Jacob Pantuso</title>
+<meta name="description" content="Requirements, joining the TestFlight beta and first-launch setup for myIONIQ.">
+<link rel="icon" href="../images/app-icon.png">
+<link rel="apple-touch-icon" href="../images/app-icon.png">
+<script>try{var s=localStorage.getItem('color-scheme');if(s)document.documentElement.setAttribute('data-color-scheme',s)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/myioniq.css">
+<script src="../assets/myioniq.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <button class="theme-btn menu-btn" type="button" aria-label="Show docs navigation" aria-expanded="false">☰</button>
+    <a class="brand" href="../"><img src="../images/app-icon.png" alt="">myIONIQ <span style="color:var(--fg-tertiary);font-weight:500">Docs</span></a>
+    <nav aria-label="Main">
+      <a href="../" class="hide-sm">Overview</a>
+      <a href="./">Docs</a>
+      <a href="/" class="hide-sm">Jacob Pantuso</a>
+      <button class="theme-btn" type="button" aria-label="Toggle colour scheme">☀</button>
+    </nav>
+  </div>
+</header>
+<div class="wrap docs">
+<aside class="sidebar" aria-label="Docs navigation">
+<h4>Start</h4><ul>
+<li><a href="index.html">Introduction</a></li>
+<li><a href="getting-started.html" aria-current="page">Getting Started</a></li>
+<li class="sub"><ul><li><a href="#requirements">Requirements</a></li><li><a href="#join">Joining TestFlight</a></li><li><a href="#setup">Setup</a></li><li><a href="#demo">Demo Mode</a></li></ul></li>
+</ul>
+<h4>Hardware</h4><ul>
+<li><a href="hardware.html">Hardware Setup</a></li>
+</ul>
+<h4>Inside the App</h4><ul>
+<li><a href="how-it-works.html">How It Works</a></li>
+</ul>
+<h4>Help</h4><ul>
+<li><a href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<h4>More</h4><ul><li><a href="../">myIONIQ Overview</a></li><li><a href="/">jacobpantuso.ca</a></li></ul>
+</aside>
+<main class="article">
+<h1>Getting Started</h1>
+<p class="lead">Requirements, joining TestFlight and setup.</p>
+
+<h2 id="requirements">Requirements</h2>
+<ul>
+  <li>An iPhone on <strong>iOS 27 or later</strong>.</li>
+  <li>A Hyundai or Kia e-GMP EV (IONIQ 5, IONIQ 6, EV6 and their siblings) with an <strong>active Bluelink subscription</strong>.</li>
+  <li>The <strong>TestFlight</strong> app from the App Store.</li>
+  <li>Optional: a <a href="hardware.html#obd">Bluetooth LE OBD-II adapter</a> for CarPlay and live charging, and the <a href="hardware.html#preconditioning">harness adapter</a> for preconditioning and cluster directions.</li>
+</ul>
+
+<h2 id="join">Joining TestFlight</h2>
+<p>Early access opens on TestFlight in small waves. Testers join either through an email invitation or a public link with a limited number of places.</p>
+<ol class="steps">
+  <li>Install <strong>TestFlight</strong> from the App Store.</li>
+  <li>Open the invitation email or the public link on your iPhone and tap <strong>Accept</strong> or <strong>Start Testing</strong>.</li>
+  <li>Install myIONIQ from TestFlight. New builds appear there automatically.</li>
+</ol>
+<div class="note"><b>Builds expire</b>Each TestFlight build lasts 90 days. TestFlight shows a newer build well before that, so keep the app updated.</div>
+
+<h2 id="setup">Setup</h2>
+<p>A short onboarding flow walks you through each piece. Anything you skip waits for you in Settings, which is the gear at the top of the <strong>Service</strong> tab.</p>
+<div class="shots"><figure><img src="../images/app-onboarding.jpg" alt="Welcome, the first onboarding page." loading="lazy" width="598" height="1300"><figcaption><b>Welcome</b>, the first onboarding page.</figcaption></figure><figure><img src="../images/app-service.jpg" alt="Settings lives behind the gear on the Service tab." loading="lazy" width="598" height="1300"><figcaption><b>Settings</b> lives behind the gear on the Service tab.</figcaption></figure></div>
+<ol class="steps">
+  <li><strong>Bluelink.</strong> Sign in with your Bluelink email, password and PIN. They're stored in your iPhone's Keychain and only ever sent to Bluelink.</li>
+  <li><strong>Vehicle Colour.</strong> Pick your paint so the car on the home screen matches yours.</li>
+  <li><strong>OBD-II Adapter.</strong> Pair it now if it's plugged in and the car is on, or later from <span class="path">Settings › OBD Adapter</span>.</li>
+  <li><strong>Preconditioning Adapter.</strong> Pair the harness adapter, and choose whether to precondition automatically on DC-fast routes and show directions in the cluster.</li>
+  <li><strong>Home &amp; Work.</strong> Used for commute times, charging plans and CarPlay suggestions.</li>
+  <li><strong>CarPlay.</strong> Turn on Favourite Routes, destination suggestions and trip recording.</li>
+</ol>
+
+<h2 id="commands">Commands</h2>
+<p>Lock, unlock, climate, charging, horn and lights go through Bluelink and ask for Face ID first, falling back to your passcode. Bluelink delivers commands to the car over its cellular connection, so they can take anywhere from a few seconds to a minute.</p>
+<p>If Bluelink reports the car is busy, or your phone is offline, the command is queued and sent again automatically once it can get through.</p>
+
+<h2 id="demo">Demo Mode</h2>
+<p>On the Bluelink sign-in screen, tap the line <em>"Your credentials are stored in your iPhone's Keychain and never shared"</em> ten times. myIONIQ loads a demo vehicle so you can look around without an account. Commands in demo mode don't reach a real car.</p>
+
+<nav class="pager" aria-label="Pages"><a href="index.html"><span>Previous</span>Introduction</a><a class="next" href="hardware.html"><span>Next</span>Hardware Setup</a></nav>
+</main>
+</div>
+<footer class="footer">
+  <div class="wrap">
+    <span>myIONIQ is an independent project, not affiliated with or endorsed by Hyundai or Kia.</span>
+    <span>Built by <a href="/">Jacob Pantuso</a></span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>myIONIQ – Jacob Pantuso</title>
+<meta name="description" content="myIONIQ is a companion app for Hyundai and Kia e-GMP EVs on iPhone, CarPlay and Apple Watch, with live charging data, CarPlay navigation and cluster directions.">
+<meta property="og:title" content="myIONIQ">
+<meta property="og:description" content="The companion app for Hyundai and Kia e-GMP EVs, on iPhone, CarPlay and Apple Watch.">
+<meta property="og:image" content="https://jacobpantuso.ca/myIONIQ/images/app-icon.png">
+<link rel="icon" href="images/app-icon.png">
+<link rel="apple-touch-icon" href="images/app-icon.png">
+<script>try{var s=localStorage.getItem('color-scheme');if(s)document.documentElement.setAttribute('data-color-scheme',s)}catch(e){}</script>
+<link rel="stylesheet" href="assets/myioniq.css">
+<script src="assets/myioniq.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="images/app-icon.png" alt="">myIONIQ</a>
+    <nav aria-label="Main">
+      <a href="#features" class="hide-sm">Features</a>
+      <a href="#hardware" class="hide-sm">Hardware</a>
+      <a href="docs/">Docs</a>
+      <a href="/" class="hide-sm">Jacob Pantuso</a>
+      <button class="theme-btn" type="button" aria-label="Toggle colour scheme">☀</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <img class="icon" src="images/app-icon.png" alt="myIONIQ app icon" width="112" height="112">
+    <h1>myIONIQ</h1>
+    <p class="lede">For Hyundai and Kia e-GMP EVs, on iPhone, CarPlay and Apple Watch.</p>
+    <div class="actions">
+      <a class="btn" href="#early-access">Join Early Access</a>
+      <a class="btn ghost" href="docs/">Read the Docs</a>
+    </div>
+    <div class="note warn hero-note" role="note"><b>Coming Soon to Early Beta</b>myIONIQ is about to open for early beta testing on TestFlight, and the app may be unstable at times. So far it's only been tested on a few vehicles, starting with an IONIQ 6 in Canada. Support for more Hyundai and Kia e-GMP models and regions will keep growing with each release.</div>
+    <div class="chips">
+      <span class="chip">TestFlight early access</span>
+      <span class="chip">iOS 27+</span>
+      <span class="chip">Hyundai · Kia · e-GMP</span>
+    </div>
+  </section>
+
+  <div class="phones wrap" aria-label="Screenshots">
+    <img src="images/home.webp" class="framed" alt="Home screen showing range, charge, lock and climate" loading="lazy" width="551" height="1200">
+    <img src="images/charge.webp" class="framed" alt="Charge screen" loading="lazy" width="551" height="1200">
+    <img src="images/navigate.webp" class="framed" alt="Navigate screen with a route on the map" loading="lazy" width="552" height="1200">
+    <img src="images/service.webp" class="framed" alt="Service screen" loading="lazy" width="552" height="1200">
+  </div>
+
+  <section class="section wrap" id="features">
+    <div class="section-head">
+      <h2>Remote Services</h2>
+      <p>Lock, climate, charging, horn and lights through Bluelink, from anywhere.</p>
+    </div>
+
+    <div class="split">
+      <div class="copy">
+        <h2>At a Glance</h2>
+        <ul class="feature-list">
+          <li><span class="dot">●</span><span><b>Range, charge, lock and climate</b>, with your car drawn in its actual paint colour.</span></li>
+          <li><span class="dot">⚡︎</span><span><b>Lock, climate, horn and lights</b> a tap away, each confirmed with Face ID.</span></li>
+          <li><span class="dot">◐</span><span><b>A status band</b> takes over the top of the screen while a charge or battery warm-up is running.</span></li>
+          <li><span class="dot">↻</span><span><b>Every reading shows its source and age</b>: Bluelink or the car itself, and how long ago.</span></li>
+        </ul>
+      </div>
+      <img class="shot framed" src="images/home-midnight.webp" alt="Home screen in the Midnight palette" loading="lazy" width="551" height="1200">
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="split flip">
+      <div class="copy">
+        <h2>Charge History</h2>
+        <p style="color:var(--fg-secondary);margin-top:14px">With the OBD-II adapter connected, myIONIQ records the charge every minute, including real charge power, and turns those readings into sessions with a curve, energy added, time taken and peak power.</p>
+        <ul class="feature-list">
+          <li><span class="dot">∿</span><span><b>Charges you missed still get filed</b>, inferred from the readings on either side.</span></li>
+          <li><span class="dot">→</span><span><b>Sessions carry on</b> even if you walk away from the car halfway through.</span></li>
+          <li><span class="dot">⏱</span><span><b>Live Activities</b> keep the session on your Lock Screen and Dynamic Island.</span></li>
+        </ul>
+      </div>
+      <img class="shot framed" src="images/charge-session.webp" alt="A recorded charging session with its power curve" loading="lazy" width="551" height="1200">
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>CarPlay Navigation</h2>
+      <p>Routes and live traffic from Mapbox, with lane guidance and signals. Long trips get charging stops sized to what each leg actually needs, not a flat 80%. myIONIQ learns the routes you prefer and where you tend to go, and a route planned on your phone can be sent to the car with its charging stops intact.</p>
+    </div>
+    <img class="wide-card" src="images/carplay-highway.jpg" alt="myIONIQ in CarPlay on the Don Valley Parkway with lane guidance" loading="lazy" width="2000" height="750">
+    <img class="wide-card" src="images/card-carplay.png" alt="CarPlay features" loading="lazy" width="1424" height="533" style="margin-top:18px">
+  </section>
+
+  <section class="section wrap" id="hardware">
+    <div class="section-head">
+      <h2>Vehicle Telemetry</h2>
+      <p>The battery answers on the OBD-II port, while the cluster and head-up display take their packets from behind the head unit. Reaching both needs two adapters on two different buses.</p>
+    </div>
+    <img class="wide-card" src="images/card-hardware.png" alt="The OBD-II adapter and the harness adapter" loading="lazy" width="1424" height="678">
+    <div class="grid-3" style="margin-top:22px">
+      <div class="tile energy">
+        <h3>Basic OBD Sync</h3>
+        <p>Live state of charge, real charge power, door and lock state, battery temperature and per-trip regen, read every minute while you're with the car.</p>
+        <p class="need">Requires a Bluetooth LE OBD-II adapter</p>
+      </div>
+      <div class="tile climate">
+        <h3>Battery Preconditioning</h3>
+        <p>Warms the high-voltage battery on the way to a DC fast charger, even on a CarPlay route, so the car takes full power at the plug.</p>
+        <p class="need">Requires the <a href="https://github.com/tylerharvey/Ioniq5_CAN">Ioniq5_CAN harness</a> running <a href="https://github.com/JacobPantuso/wicant-i-precondition">my WiCAN firmware fork</a></p>
+      </div>
+      <div class="tile">
+        <h3>Cluster and HUD Directions</h3>
+        <p>Turn arrows, distance, street names and lane guidance from a CarPlay route, drawn on the instrument cluster and the head-up display.</p>
+        <p class="need">Requires both adapters and a myIONIQ route in CarPlay</p>
+      </div>
+    </div>
+    <div class="photo-pair" style="margin-top:22px">
+      <figure style="margin:0"><img src="images/carplay-city.jpg" alt="A left turn onto Don Mills Road in CarPlay" loading="lazy"><figcaption>The turn in CarPlay…</figcaption></figure>
+      <figure style="margin:0"><img src="images/hud.jpg" alt="The same turn on the IONIQ 6 head-up display" loading="lazy"><figcaption>…and on the IONIQ 6's head-up display, with lanes.</figcaption></figure>
+    </div>
+    <p style="margin-top:20px"><a href="docs/hardware.html">Hardware setup guide →</a></p>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <h2>Themes</h2>
+    </div>
+    <img class="wide-card" src="images/card-palettes.png" alt="Colour palettes" loading="lazy" width="1424" height="435">
+  </section>
+
+  <section class="section wrap">
+    <div class="split">
+      <div class="copy">
+        <h2>Beyond the App</h2>
+        <ul class="feature-list">
+          <li><span class="dot">◼︎</span><span><b>Live Activities</b> on the Lock Screen, in the Dynamic Island and in CarPlay.</span></li>
+          <li><span class="dot">▦</span><span><b>Home Screen and Lock Screen widgets</b> with one-tap controls.</span></li>
+          <li><span class="dot">⌚︎</span><span><b>An Apple Watch app</b> for status and commands from your wrist.</span></li>
+          <li><span class="dot">⌘</span><span><b>Shortcuts</b> for common commands, and <b>walk-away locking</b> over Bluetooth.</span></li>
+        </ul>
+      </div>
+      <img class="shot" src="images/live-activities.png" alt="Live Activities on the Lock Screen" loading="lazy" width="748" height="836" style="width:min(340px,80vw);border-radius:22px">
+    </div>
+  </section>
+
+  <section class="section wrap" id="early-access">
+    <div class="cta">
+      <h2>TestFlight Early Access</h2>
+      <p>myIONIQ is heading to TestFlight in small waves. You'll need an iPhone on iOS 27 or later and a Bluelink account. An OBD-II adapter unlocks CarPlay and live charging.</p>
+      <div class="actions">
+        <a class="btn" href="docs/getting-started.html">How to Join</a>
+        <a class="btn ghost" href="docs/">Browse the Docs</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <span>myIONIQ is an independent project, not affiliated with or endorsed by Hyundai or Kia.</span>
+    <span>Built by <a href="/">Jacob Pantuso</a></span>
+  </div>
+</footer>
+</body>
+</html>
