@@ -94,7 +94,15 @@
       <p>Routes and live traffic from Mapbox, with lane guidance and signals. Long trips get charging stops sized to what each leg actually needs, not a flat 80%. myIONIQ learns the routes you prefer and where you tend to go, and a route planned on your phone can be sent to the car with its charging stops intact.</p>
     </div>
     <img class="wide-card" src="images/carplay-highway.jpg" alt="myIONIQ in CarPlay on the Don Valley Parkway with lane guidance" loading="lazy" width="2000" height="750">
-    <img class="wide-card" src="images/card-carplay.png" alt="CarPlay features" loading="lazy" width="1424" height="533" style="margin-top:18px">
+    
+    <div class="feature-grid">
+      <div class="feature-card"><span class="ficon energy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span><div><h3>Charging Stops</h3><p>Stops are picked from Open Charge Map, and each one charges only as much as the next leg needs, not a flat 80%.</p></div></div>
+      <div class="feature-card"><span class="ficon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg></span><div><h3>Favourite Routes</h3><p>Remembers the way you actually drive somewhere and offers it first, even when it isn't the fastest.</p></div></div>
+      <div class="feature-card"><span class="ficon accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg></span><div><h3>Suggestions</h3><p>Suggests your likely destination when you get in, based on the time and where you usually go.</p></div></div>
+      <div class="feature-card"><span class="ficon accent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 20V5M4 8l3-3 3 3M17 20V5M14 8l3-3 3 3"/><path d="M12 4v2M12 11v2M12 18v2"/></svg></span><div><h3>Lanes and Incidents</h3><p>Shows every lane ahead and highlights the ones you need, and warns you about crashes, closures and construction on your route.</p></div></div>
+      <div class="feature-card"><span class="ficon climate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14l4-4"/><path d="M3.3 17a9 9 0 1 1 17.4 0"/></svg></span><div><h3>Cluster and HUD</h3><p>Puts turn arrows, street names and lanes on the instrument cluster and head-up display, not just on the CarPlay screen.</p></div></div>
+      <div class="feature-card"><span class="ficon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14.8V5a2 2 0 1 1 4 0v9.8a4 4 0 1 1-4 0z"/></svg></span><div><h3>Preconditioning</h3><p>Warms the battery automatically on the way to a DC fast charger so it charges at full speed. You can also start it yourself, no route needed.</p></div></div>
+    </div>
   </section>
 
   <section class="section wrap" id="hardware">
@@ -102,7 +110,19 @@
       <h2>Vehicle Telemetry</h2>
       <p>The battery answers on the OBD-II port, while the cluster and head-up display take their packets from behind the head unit. Reaching both needs two adapters on two different buses.</p>
     </div>
-    <img class="wide-card" src="images/card-hardware.png" alt="The OBD-II adapter and the harness adapter" loading="lazy" width="1424" height="678">
+    <div class="adapters">
+      <div class="adapter">
+        <div class="adapter-head"><span class="ficon energy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6M6 8h12v3a6 6 0 0 1-12 0zM12 17v5"/></svg></span><div><h3>OBD-II Adapter</h3><span class="badge energy">Required for CarPlay</span></div></div>
+        <p class="adapter-sub">Any Bluetooth LE ELM327, in the OBD-II port</p>
+        <ul class="checks"><li>Live charge and charge power</li><li>Minute-by-minute charge curves</li><li>Trip energy and efficiency</li><li>Door, lock and battery state without API calls</li></ul>
+      </div>
+      <div class="adapter">
+        <div class="adapter-head"><span class="ficon warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14.8V5a2 2 0 1 1 4 0v9.8a4 4 0 1 1-4 0z"/></svg></span><div><h3>Harness Adapter</h3><span class="badge warn">Optional</span></div></div>
+        <p class="adapter-sub">The Ioniq5_CAN harness, behind the head unit</p>
+        <ul class="checks"><li>Battery preconditioning on demand</li><li>Auto-warm before DC fast charging</li><li>CarPlay directions on the cluster</li><li>Lanes and streets on the HUD</li></ul>
+        <a class="btn small" href="https://github.com/tylerharvey/Ioniq5_CAN">Get the Harness Kit ↗</a>
+      </div>
+    </div>
     <div class="grid-3" style="margin-top:22px">
       <div class="tile energy">
         <h3>Basic OBD Sync</h3>
@@ -130,8 +150,9 @@
   <section class="section wrap">
     <div class="section-head">
       <h2>Themes</h2>
+      <p>Five palettes, light and dark.</p>
     </div>
-    <img class="wide-card" src="images/card-palettes.png" alt="Colour palettes" loading="lazy" width="1424" height="435">
+    <div class="palettes"><div class="palette"><div class="swatch" style="background:#f4f3ef"><span class="bar" style="background:#ffffff"><i style="background:#3d3d3d"></i></span><span class="dots"><b style="background:#5cd65c"></b><b style="background:#ef6a3d"></b><b style="background:#2f3f30"></b><b style="background:#2a3a52"></b></span></div><h3>Chalk</h3><p>Bright and neutral</p></div><div class="palette"><div class="swatch" style="background:#edf1ec"><span class="bar" style="background:#f6f8f5"><i style="background:#3f4b44"></i></span><span class="dots"><b style="background:#5cd65c"></b><b style="background:#ef6a3d"></b><b style="background:#2f3f30"></b><b style="background:#2b4036"></b></span></div><h3>Sage</h3><p>Soft green</p></div><div class="palette"><div class="swatch" style="background:#f5efe8"><span class="bar" style="background:#fdfbf8"><i style="background:#4f433a"></i></span><span class="dots"><b style="background:#5cd65c"></b><b style="background:#ef6a3d"></b><b style="background:#36452f"></b><b style="background:#4a382c"></b></span></div><h3>Clay</h3><p>Warm sand</p></div><div class="palette"><div class="swatch" style="background:#eff1f4"><span class="bar" style="background:#ffffff"><i style="background:#3d4450"></i></span><span class="dots"><b style="background:#5cd65c"></b><b style="background:#ef6a3d"></b><b style="background:#203a52"></b><b style="background:#2d4c6e"></b></span></div><h3>Mist</h3><p>Cool blue-grey</p></div><div class="palette"><div class="swatch" style="background:#0c0c10"><span class="bar" style="background:#1f1f24"><i style="background:#d6d6d6"></i></span><span class="dots"><b style="background:#a6e36b"></b><b style="background:#e58b4a"></b><b style="background:#6fae8a"></b><b style="background:#8fb4d8"></b></span></div><h3>Midnight</h3><p>Dark</p></div></div>
   </section>
 
   <section class="section wrap">
