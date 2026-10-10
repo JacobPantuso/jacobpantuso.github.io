@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Numen · Docs</title>
+<meta name="description" content="Documentation for Numen: setup, hardware, how the app works and troubleshooting.">
+<link rel="icon" href="../images/app-icon.png">
+<link rel="apple-touch-icon" href="../images/app-icon.png">
+<script>try{var s=localStorage.getItem('color-scheme');if(s)document.documentElement.setAttribute('data-color-scheme',s)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/numen.css">
+<script src="../assets/numen.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <button class="theme-btn menu-btn" type="button" aria-label="Show docs navigation" aria-expanded="false">☰</button>
+    <a class="brand" href="../"><img src="../images/app-icon.png" alt="">Numen <span style="color:var(--fg-tertiary);font-weight:500">Docs</span></a>
+    <nav aria-label="Main">
+      <a href="../" class="hide-sm">Overview</a>
+      <a href="./" aria-current="page">Docs</a>
+      <a href="/" class="hide-sm">Jacob Pantuso</a>
+      <button class="theme-btn" type="button" aria-label="Toggle colour scheme">☀</button>
+    </nav>
+  </div>
+</header>
+<div class="wrap docs">
+<aside class="sidebar" aria-label="Docs navigation">
+<h4>Start</h4><ul>
+<li><a href="index.html" aria-current="page">Introduction</a></li>
+<li><a href="getting-started.html">Getting Started</a></li>
+</ul>
+<h4>Hardware</h4><ul>
+<li><a href="hardware.html">Hardware Setup</a></li>
+</ul>
+<h4>Inside the App</h4><ul>
+<li><a href="how-it-works.html">How It Works</a></li>
+</ul>
+<h4>Help</h4><ul>
+<li><a href="troubleshooting.html">Troubleshooting</a></li>
+<li><a href="index.html#release-notes">Release Notes</a></li>
+</ul>
+<h4>More</h4><ul><li><a href="../">Numen Overview</a></li></ul>
+</aside>
+<main class="article">
+<h1>Numen Docs</h1>
+<p class="lead">Setup, hardware and troubleshooting.</p>
+
+<div class="card-links">
+  <a href="getting-started.html"><b>Getting Started</b><span>Join the beta, sign in with Bluelink and finish setup.</span></a>
+  <a href="hardware.html"><b>Hardware Setup</b><span>The OBD-II adapter, battery preconditioning and cluster directions.</span></a>
+  <a href="how-it-works.html"><b>How It Works</b><span>Where each number comes from and how fresh it is.</span></a>
+  <a href="troubleshooting.html"><b>Troubleshooting</b><span>The Developer menu, logs, common problems and bug reports.</span></a>
+</div>
+
+<h2>Overview</h2>
+<p>Numen is an iPhone, CarPlay and Apple Watch app for Hyundai and Kia e-GMP EVs, such as the IONIQ 5, IONIQ 6 and EV6. It talks to the car three ways:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Source</th><th>Works From</th><th>Used For</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Bluelink</strong></td><td>Anywhere</td><td>Remote commands (lock, climate, charging, horn and lights) and the car's last reported status</td></tr>
+    <tr><td><strong>OBD-II adapter</strong></td><td>At the car</td><td>Live charge, real charge power, locks and doors, trips and regen; required for CarPlay</td></tr>
+    <tr><td><strong>Harness adapter</strong></td><td>At the car</td><td>Battery preconditioning and CarPlay directions on the cluster and HUD</td></tr>
+  </tbody>
+</table></div>
+<p>Only Bluelink is required. Each adapter adds to it, and the app works out which source has the freshest answer for every reading.</p>
+
+<h2>Status</h2>
+<div class="note"><b>Early access</b>Numen is in a TestFlight beta. It's built and tested on an IONIQ 6 with a Canadian Bluelink account. Other e-GMP cars and regions may work, but haven't been tested yet, and reports from them are especially useful.</div>
+
+<h2 id="release-notes">Release Notes</h2>
+<h3>Version 1.0</h3>
+<p><strong>Initial Release.</strong> The first version of Numen, available through TestFlight early access.</p>
+
+<nav class="pager" aria-label="Pages"><a class="next" href="getting-started.html"><span>Next</span>Getting Started</a></nav>
+</main>
+</div>
+<footer class="footer">
+  <div class="wrap">
+    <span>Numen is an independent project, not affiliated with or endorsed by Hyundai or Kia.</span>
+    <span>Built by <a href="/">Jacob Pantuso</a></span>
+  </div>
+</footer>
+</body>
+</html>

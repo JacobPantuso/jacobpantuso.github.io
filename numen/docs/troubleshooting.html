@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Numen · Troubleshooting</title>
+<meta name="description" content="Debugging Numen: the Developer menu, Activity Log, common problems and bug reports.">
+<link rel="icon" href="../images/app-icon.png">
+<link rel="apple-touch-icon" href="../images/app-icon.png">
+<script>try{var s=localStorage.getItem('color-scheme');if(s)document.documentElement.setAttribute('data-color-scheme',s)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/numen.css">
+<script src="../assets/numen.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <button class="theme-btn menu-btn" type="button" aria-label="Show docs navigation" aria-expanded="false">☰</button>
+    <a class="brand" href="../"><img src="../images/app-icon.png" alt="">Numen <span style="color:var(--fg-tertiary);font-weight:500">Docs</span></a>
+    <nav aria-label="Main">
+      <a href="../" class="hide-sm">Overview</a>
+      <a href="./">Docs</a>
+      <a href="/" class="hide-sm">Jacob Pantuso</a>
+      <button class="theme-btn" type="button" aria-label="Toggle colour scheme">☀</button>
+    </nav>
+  </div>
+</header>
+<div class="wrap docs">
+<aside class="sidebar" aria-label="Docs navigation">
+<h4>Start</h4><ul>
+<li><a href="index.html">Introduction</a></li>
+<li><a href="getting-started.html">Getting Started</a></li>
+</ul>
+<h4>Hardware</h4><ul>
+<li><a href="hardware.html">Hardware Setup</a></li>
+</ul>
+<h4>Inside the App</h4><ul>
+<li><a href="how-it-works.html">How It Works</a></li>
+</ul>
+<h4>Help</h4><ul>
+<li><a href="troubleshooting.html" aria-current="page">Troubleshooting</a></li>
+<li class="sub"><ul><li><a href="#developer">Developer Menu</a></li><li><a href="#logs">Activity Log</a></li><li><a href="#common">Common Problems</a></li><li><a href="#report">Reporting a Bug</a></li></ul></li>
+<li><a href="index.html#release-notes">Release Notes</a></li>
+</ul>
+<h4>More</h4><ul><li><a href="../">Numen Overview</a></li></ul>
+</aside>
+<main class="article">
+<h1>Troubleshooting</h1>
+<p class="lead">Logs, common problems and bug reports.</p>
+
+<h2 id="developer">Developer Menu</h2>
+<p>The diagnostic tools are hidden until you unlock them. Open <strong>Settings</strong> (the gear on the Service tab), scroll to the bottom, and tap the version number seven times. A <strong>Developer</strong> row appears below <strong>About</strong>.</p>
+<div class="shots"><figure><img src="../images/app-settings-about.jpg" alt="About: tap Version seven times to reveal Developer." loading="lazy" width="598" height="1300"><figcaption><b>About</b>: tap <b>Version</b> seven times to reveal <b>Developer</b>.</figcaption></figure><figure><img src="../images/app-developer.jpg" alt="Developer, shown here from a development build. TestFlight builds don't include the OBD Console or the charge simulators." loading="lazy" width="598" height="1300"><figcaption><b>Developer</b>, shown here from a development build. TestFlight builds don't include the OBD Console or the charge simulators.</figcaption></figure></div>
+<p>It contains:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Tool</th><th>What It Shows</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Activity Log</strong></td><td>A timeline of everything the app did, filterable by category. Start here.</td></tr>
+    <tr><td><strong>OBD Debug Log</strong></td><td>Raw requests and replies between the app and the OBD-II adapter.</td></tr>
+    <tr><td><strong>HTTP Logs</strong></td><td>Every request to Bluelink and the app's other services, with timings and results.</td></tr>
+    <tr><td><strong>CAN Sniffer</strong> and <strong>Cluster Codes</strong></td><td>Harness adapter tools for recording the car's CAN traffic and testing what the cluster and HUD can display. They appear once a connected harness confirms its firmware supports them.</td></tr>
+  </tbody>
+</table></div>
+<h3>Other Logs</h3>
+<p>The <strong>OBD Debug Log</strong> shows every command sent to the OBD-II adapter and its raw reply, with a filter box for finding a specific request. <strong>HTTP Logs</strong> groups requests by day and by service.</p>
+<div class="shots"><figure><img src="../images/app-obd-debug-log.jpg" alt="OBD Debug Log: commands, raw replies and the values parsed from them." loading="lazy" width="598" height="1300"><figcaption><b>OBD Debug Log</b>: commands, raw replies and the values parsed from them.</figcaption></figure><figure><img src="../images/app-http-logs.jpg" alt="HTTP Logs, filterable by service. In demo mode only push registrations appear." loading="lazy" width="598" height="1300"><figcaption><b>HTTP Logs</b>, filterable by service. In demo mode only push registrations appear.</figcaption></figure></div>
+<h3>Cluster Codes</h3>
+<p>Cluster Codes lets you send test scenes to the cluster and HUD while parked: a turn, a highway exit, an arrival flag, or a hand-built lane layout with a preview of roughly how the HUD will draw it. It's the fastest way to check what the car accepts before a drive.</p>
+<div class="shots"><figure><img src="../images/app-cluster-codes.jpg" alt="Cluster Codes scenes" loading="lazy" width="598" height="1300"><figcaption><b>Scene</b>: one tap to a state captured from a real drive.</figcaption></figure><figure><img src="../images/app-cluster-lanes.jpg" alt="Cluster Codes lane builder" loading="lazy" width="598" height="1300"><figcaption><b>Lanes</b>: build a lane layout and preview it.</figcaption></figure></div>
+
+<h2 id="logs">Activity Log</h2>
+<p>Pick a category to narrow the timeline. Warnings and errors are flagged, so problems stand out.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Category</th><th>Covers</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Lifecycle</strong></td><td>App launches, background refreshes and why a refresh did or didn't run</td></tr>
+    <tr><td><strong>OBD</strong></td><td>Both adapters: connecting, pairing, readings, timeouts and reconnects</td></tr>
+    <tr><td><strong>CarPlay</strong></td><td>CarPlay screens, routes, camera and suggestions</td></tr>
+    <tr><td><strong>Cluster</strong></td><td>Everything sent to the cluster and HUD during a route</td></tr>
+    <tr><td><strong>Trips</strong></td><td>When drives start, end and get filed</td></tr>
+    <tr><td><strong>Network</strong> and <strong>App</strong></td><td>Connectivity changes, memory and general app events</td></tr>
+  </tbody>
+</table></div>
+<p>The screen opens as <strong>Diagnostics</strong>. Use the share button to send the whole log as a file, or the <strong>⋯</strong> menu to copy just the category you're looking at. The in-app viewer keeps the most recent lines, so share the file soon after a problem happens.</p>
+<div class="shots"><figure><img src="../images/app-activity-log.jpg" alt="The OBD category during a harness drop and automatic reconnect. Warnings are amber." loading="lazy" width="598" height="1300"><figcaption>The <b>OBD</b> category during a harness drop and automatic reconnect. Warnings are amber.</figcaption></figure><figure><img src="../images/app-log-menu.jpg" alt="The ⋯ menu: copy this category, copy everything, export the system log, or clear it." loading="lazy" width="598" height="1300"><figcaption>The <b>⋯</b> menu: copy this category, copy everything, export the system log, or clear it.</figcaption></figure></div>
+<p>A typical healthy connection to the harness adapter looks like this:</p>
+<pre><code>[obd] harness: connected WiC_xxxxxxxxxxxx
+[obd] harness: pipe ready on FEE0, write FEE1, notify FEE1
+[obd] harness: ATXPC try 1 -> "XPC:0,1,0,0,0,2"</code></pre>
+
+<h2 id="common">Common Problems</h2>
+
+<h3 id="stale">Stale Status</h3>
+<p>Bluelink serves the status the car last uploaded, and the car only uploads now and then. Check the source mark next to the age (see <a href="how-it-works.html#sources">Status Line</a>). Tap refresh to ask the car directly, or connect the OBD-II adapter for live readings. The <strong>Lifecycle</strong> log shows each refresh and why it was skipped, for example <code>refresh: skipped — status 13m old, under the 240m threshold</code>.</p>
+
+<h3 id="obd-missing">Adapter Not Found</h3>
+<ul>
+  <li>Make sure the car is on, since most adapters power down with it.</li>
+  <li>Confirm it's a <strong>Bluetooth LE</strong> adapter. Classic Bluetooth adapters never appear on an iPhone.</li>
+  <li>Close any other app that might be holding the adapter's connection.</li>
+</ul>
+
+<h3 id="harness">Harness Won't Reconnect</h3>
+<p>If <span class="path">Settings › OBD Adapter</span> shows <strong>Pairing Lost</strong>, the adapter and your iPhone no longer agree on their pairing. Tap <strong>Forget</strong> in the app, forget the WiCAN in iOS <span class="path">Settings › Bluetooth</span>, then pair it again.</p>
+<p>If it says connected but nothing works, look for this in the <strong>OBD</strong> log:</p>
+<pre><code>[obd] harness: 2 timeouts in a row, peripheral state 2; reading RSSI
+[obd] harness: 3 timeouts in a row (last ATXPC); dropping the link to reconnect</code></pre>
+<p>The app drops a connection that stops answering and reconnects on its own. The RSSI line between those two says whether the radio link was still up, which helps tell a firmware problem from a lost connection. Please include those lines in a bug report.</p>
+
+<h3 id="cluster-missing">No Cluster Directions</h3>
+<ul>
+  <li><strong>CarPlay Directions in Cluster</strong> only appears in Settings while the harness adapter is connected with firmware that supports it.</li>
+  <li>Directions follow a <strong>Numen</strong> route in CarPlay, not Apple Maps or another app.</li>
+  <li>The <strong>Cluster</strong> log records each update. <code>not sent: adapter not connected</code> means the harness link dropped.</li>
+</ul>
+
+<h3 id="precondition-refused">Preconditioning Refused</h3>
+<p>The car makes the final call. It refuses or stops when the battery is already warm enough or the charge is too low, and the app reports that within about 50 seconds. That's the car working as intended, not a fault.</p>
+
+<h3 id="widgets">Stale Widgets</h3>
+<p>Open the app once. Widgets redraw from the app's latest snapshot, and iOS limits how often a widget can refresh in a day.</p>
+
+<h3 id="commands">Command Failed</h3>
+<p>Bluelink commands travel over the car's cellular connection and can take up to a minute. If Bluelink reports the car is busy, the app retries on its own. The <strong>HTTP Logs</strong> show the exact response Bluelink sent.</p>
+
+<h2 id="report">Reporting a Bug</h2>
+<p>Go to <span class="path">Settings › Bug Reports</span>. The list shows bugs already reported from the app, open and recently fixed, so check it first. If yours isn't there:</p>
+<div class="shots"><figure><img src="../images/bug-reports.webp" class="framed" alt="Bug Reports screen" loading="lazy" width="551" height="1200"><figcaption><b>Bug Reports</b>: known issues first, then <b>Report a Bug</b>.</figcaption></figure></div>
+<ol class="steps">
+  <li>Tap <strong>Report a Bug</strong>.</li>
+  <li>Describe what you expected, what happened instead, and roughly when.</li>
+  <li>If the problem involves the adapters, CarPlay or the cluster, paste the relevant Activity Log lines too.</li>
+</ol>
+<p>You can also reach me with <span class="path">Settings › Email the Developer</span>.</p>
+
+<nav class="pager" aria-label="Pages"><a href="how-it-works.html"><span>Previous</span>How It Works</a></nav>
+</main>
+</div>
+<footer class="footer">
+  <div class="wrap">
+    <span>Numen is an independent project, not affiliated with or endorsed by Hyundai or Kia.</span>
+    <span>Built by <a href="/">Jacob Pantuso</a></span>
+  </div>
+</footer>
+</body>
+</html>

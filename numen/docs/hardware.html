@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Numen · Hardware Setup</title>
+<meta name="description" content="OBD-II adapter, battery preconditioning and cluster directions setup for Numen.">
+<link rel="icon" href="../images/app-icon.png">
+<link rel="apple-touch-icon" href="../images/app-icon.png">
+<script>try{var s=localStorage.getItem('color-scheme');if(s)document.documentElement.setAttribute('data-color-scheme',s)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/numen.css">
+<script src="../assets/numen.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <button class="theme-btn menu-btn" type="button" aria-label="Show docs navigation" aria-expanded="false">☰</button>
+    <a class="brand" href="../"><img src="../images/app-icon.png" alt="">Numen <span style="color:var(--fg-tertiary);font-weight:500">Docs</span></a>
+    <nav aria-label="Main">
+      <a href="../" class="hide-sm">Overview</a>
+      <a href="./">Docs</a>
+      <a href="/" class="hide-sm">Jacob Pantuso</a>
+      <button class="theme-btn" type="button" aria-label="Toggle colour scheme">☀</button>
+    </nav>
+  </div>
+</header>
+<div class="wrap docs">
+<aside class="sidebar" aria-label="Docs navigation">
+<h4>Start</h4><ul>
+<li><a href="index.html">Introduction</a></li>
+<li><a href="getting-started.html">Getting Started</a></li>
+</ul>
+<h4>Hardware</h4><ul>
+<li><a href="hardware.html" aria-current="page">Hardware Setup</a></li>
+<li class="sub"><ul><li><a href="#obd">Basic OBD Sync</a></li><li><a href="#preconditioning">Battery Preconditioning</a></li><li><a href="#cluster">Cluster and HUD</a></li></ul></li>
+</ul>
+<h4>Inside the App</h4><ul>
+<li><a href="how-it-works.html">How It Works</a></li>
+</ul>
+<h4>Help</h4><ul>
+<li><a href="troubleshooting.html">Troubleshooting</a></li>
+<li><a href="index.html#release-notes">Release Notes</a></li>
+</ul>
+<h4>More</h4><ul><li><a href="../">Numen Overview</a></li></ul>
+</aside>
+<main class="article">
+<h1>Hardware Setup</h1>
+<p class="lead">Bluelink alone runs the app. Two optional adapters add the rest.</p>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>Feature</th><th>OBD-II Adapter</th><th>Harness Adapter</th></tr></thead>
+  <tbody>
+    <tr><td>Basic OBD sync (live charge, trips, locks)</td><td>✅</td><td></td></tr>
+    <tr><td>CarPlay navigation</td><td>✅</td><td></td></tr>
+    <tr><td>Battery preconditioning (manual)</td><td></td><td>✅</td></tr>
+    <tr><td>Auto-precondition on a DC-fast route</td><td>✅</td><td>✅</td></tr>
+    <tr><td>Cluster and HUD directions</td><td>✅</td><td>✅</td></tr>
+  </tbody>
+</table></div>
+<p>The two jobs need two adapters because they live on different parts of the car: the battery answers on the OBD-II port, while the cluster and HUD receive their packets on the bus behind the head unit. Both adapters pair from <span class="path">Settings › OBD Adapter</span>, both reconnect on their own once paired, and the app holds both connections at the same time.</p>
+
+<h2 id="obd">Basic OBD Sync</h2>
+<h3>What You Need</h3>
+<ul>
+  <li>A <strong>Bluetooth Low Energy</strong> ELM327-compatible OBD-II adapter. Classic Bluetooth adapters can't talk to an iPhone, so check the listing says BLE or iOS. Numen recognises the common serial-over-BLE adapters, including the WiCAN OBD.</li>
+  <li>An adapter that sleeps on its own when the car is off. The OBD-II port stays powered, and an adapter that never sleeps drains the 12 V battery.</li>
+</ul>
+<h3>Setting It Up</h3>
+<ol class="steps">
+  <li>Plug the adapter into the OBD-II port under the dash on the driver's side.</li>
+  <li>With the car on, open <span class="path">Settings › OBD Adapter</span> and tap <strong>Scan for Adapters</strong>.</li>
+  <li>Choose your adapter. Numen remembers it and reconnects whenever you get in.</li>
+</ol>
+<div class="shots"><figure><img src="../images/app-adapters.jpg" alt="Settings › OBD Adapter, with both adapter rows expanded to show their scan buttons." loading="lazy" width="598" height="1300"><figcaption><b>Settings › OBD Adapter</b>, with both adapter rows expanded to show their scan buttons.</figcaption></figure></div>
+<h3>What It Reads</h3>
+<p>While connected, the app reads the car every 60 seconds: displayed state of charge, whether it's charging and the real charge power, battery temperature, and door, trunk, hood and lock state. It also reads the battery's lifetime energy counters, which is where per-trip regen comes from.</p>
+<p>The requests come from the <a href="https://github.com/OBDb">OBDb</a> IONIQ 6 signal set, plus a few body-module values I decoded myself. Other e-GMP cars share most of the battery side, but only the IONIQ 6 has been tested.</p>
+
+<h2 id="preconditioning">Battery Preconditioning</h2>
+<p>Preconditioning warms the high-voltage battery before a DC fast charge so the car takes full power from the moment you plug in. The car only starts it on its own when the built-in navigation is heading to a fast charger, so a CarPlay route never does. The harness adapter starts it for you instead.</p>
+<h3>What You Need</h3>
+<ul>
+  <li>The <a href="https://github.com/tylerharvey/Ioniq5_CAN">Ioniq5_CAN</a> harness kit, installed behind the head unit, with its WiCAN on the multimedia CAN bus.</li>
+  <li>The WiCAN flashed with the <code>feature/myIONIQ</code> branch of <a href="https://github.com/JacobPantuso/wicant-i-precondition">my firmware fork</a>. Stock firmware only starts preconditioning from a physical button; the fork adds a command so the app can start, stop and check on it over Bluetooth. Build and flash steps are in that repo.</li>
+  <li>For <strong>Auto-Precondition on DC-Fast Route</strong>, the OBD-II adapter too, and a Numen route in CarPlay that ends at a DC fast charger.</li>
+</ul>
+<h3>Setting It Up</h3>
+<ol class="steps">
+  <li>With the car on, open <span class="path">Settings › OBD Adapter</span> and tap <strong>Scan for Harness Adapter</strong>.</li>
+  <li>Choose the WiCAN and accept the iOS pairing prompt.</li>
+  <li><strong>Precondition Battery</strong> now appears on the Charge screen. Turn on <strong>Auto-Precondition on DC-Fast Route</strong> in Settings if you want it to start by itself.</li>
+</ol>
+<div class="shots"><figure><img src="../images/app-home.jpg" alt="While the battery warms, the home screen's status band says so." loading="lazy" width="598" height="1300"><figcaption>While the battery warms, the home screen's status band says so.</figcaption></figure><figure><img src="../images/app-charge-precondition.jpg" alt="The Charge screen shows pack temperatures and a button to stop." loading="lazy" width="598" height="1300"><figcaption>The Charge screen shows pack temperatures and a button to stop.</figcaption></figure></div>
+<h3>Good to Know</h3>
+<ul>
+  <li>It only works while your phone is connected to the adapter, so you need to be at the car. Bluelink has no way to start it remotely.</li>
+  <li>The car decides when the battery is warm enough. If the pack is already at temperature, or the charge is too low, it turns the request down, and the app tells you so within about 50 seconds.</li>
+  <li>"Preconditioning" here means the battery. Cabin climate is separate, and both can run together.</li>
+</ul>
+
+<h2 id="cluster">Cluster and HUD Directions</h2>
+<p>Turn arrows, distance to the turn, street names and lane guidance from a CarPlay route appear on the instrument cluster and the head-up display, as they do with the built-in navigation.</p>
+<div class="photo-pair">
+  <figure class="figure-wide" style="margin:0"><img src="../images/carplay-city.jpg" alt="Numen in CarPlay, turning left onto Don Mills Road in 8.5 km" loading="lazy"><figcaption><b>CarPlay</b>: the next turn, left onto Don Mills Road, with lane guidance.</figcaption></figure>
+  <figure class="figure-wide" style="margin:0"><img src="../images/hud.jpg" alt="IONIQ 6 head-up display showing the same turn with lanes" loading="lazy"><figcaption><b>The HUD</b>: the same turn, street name, distance and lanes, drawn by the car.</figcaption></figure>
+</div>
+<h3>What You Need</h3>
+<ul>
+  <li>The harness adapter running the <code>feature/myIONIQ</code> firmware described above. Older firmware doesn't offer the toggle.</li>
+  <li>The OBD-II adapter, because cluster directions follow a Numen route in CarPlay. Apple Maps and other CarPlay apps don't send directions to the cluster.</li>
+  <li>The frame layouts were decoded on an IONIQ 6. Lanes and arrows on the HUD need a car fitted with one.</li>
+</ul>
+<h3>Setting It Up</h3>
+<ol class="steps">
+  <li>Pair the harness adapter as described above.</li>
+  <li>With the car on and the adapter connected, turn on <strong>CarPlay Directions in Cluster</strong> in Settings. The toggle appears once the app confirms the connected firmware supports it.</li>
+  <li>Start a route in Numen on CarPlay.</li>
+</ol>
+<h3>Good to Know</h3>
+<ul>
+  <li>This is experimental. The head unit keeps sending its own navigation frames and the firmware sends corrected copies straight after them, so an arrow can flicker now and then.</li>
+  <li>Directions clear from the cluster and HUD when you arrive, end guidance, or the phone disconnects.</li>
+</ul>
+
+<nav class="pager" aria-label="Pages"><a href="getting-started.html"><span>Previous</span>Getting Started</a><a class="next" href="how-it-works.html"><span>Next</span>How It Works</a></nav>
+</main>
+</div>
+<footer class="footer">
+  <div class="wrap">
+    <span>Numen is an independent project, not affiliated with or endorsed by Hyundai or Kia.</span>
+    <span>Built by <a href="/">Jacob Pantuso</a></span>
+  </div>
+</footer>
+</body>
+</html>
