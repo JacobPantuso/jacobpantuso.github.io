@@ -6,8 +6,11 @@
 <title>Numen · Hardware Setup</title>
 <meta name="description" content="OBD-II adapter, battery preconditioning and cluster directions setup for Numen.">
 <link rel="icon" href="../images/app-icon.png">
-<link rel="apple-touch-icon" href="../images/app-icon.png">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
 <script>try{var s=localStorage.getItem('color-scheme');if(s)document.documentElement.setAttribute('data-color-scheme',s)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="../assets/numen.css">
 <script src="../assets/numen.js" defer></script>
 </head>
@@ -15,11 +18,11 @@
 <header class="topbar">
   <div class="wrap">
     <button class="theme-btn menu-btn" type="button" aria-label="Show docs navigation" aria-expanded="false">☰</button>
-    <a class="brand" href="../"><img src="../images/app-icon.png" alt="">Numen <span style="color:var(--fg-tertiary);font-weight:500">Docs</span></a>
+    <a class="brand" href="../"><img src="../images/app-icon.png" alt="">Numen <em>Docs</em></a>
     <nav aria-label="Main">
       <a href="../" class="hide-sm">Overview</a>
-      <a href="./">Docs</a>
-      <a href="/" class="hide-sm">Jacob Pantuso</a>
+      <a href="release-notes.html" class="hide-sm">Release Notes</a>
+      <a href="getting-started.html#join" class="cta">Join the Beta</a>
       <button class="theme-btn" type="button" aria-label="Toggle colour scheme">☀</button>
     </nav>
   </div>
@@ -34,16 +37,16 @@
 <li><a href="hardware.html" aria-current="page">Hardware Setup</a></li>
 <li class="sub"><ul><li><a href="#obd">Basic OBD Sync</a></li><li><a href="#preconditioning">Battery Preconditioning</a></li><li><a href="#cluster">Cluster and HUD</a></li></ul></li>
 </ul>
-<h4>Inside the App</h4><ul>
+<h4>Using Numen</h4><ul>
 <li><a href="how-it-works.html">How It Works</a></li>
 </ul>
 <h4>Help</h4><ul>
 <li><a href="troubleshooting.html">Troubleshooting</a></li>
-<li><a href="index.html#release-notes">Release Notes</a></li>
+<li><a href="release-notes.html">Release Notes</a></li>
 </ul>
-<h4>More</h4><ul><li><a href="../">Numen Overview</a></li></ul>
 </aside>
 <main class="article">
+<div class="eyebrow">Hardware</div>
 <h1>Hardware Setup</h1>
 <p class="lead">Bluelink alone runs the app. Two optional adapters add the rest.</p>
 
@@ -125,6 +128,7 @@
 <nav class="pager" aria-label="Pages"><a href="getting-started.html"><span>Previous</span>Getting Started</a><a class="next" href="how-it-works.html"><span>Next</span>How It Works</a></nav>
 </main>
 </div>
+
 <footer class="footer">
   <div class="wrap">
     <span>Numen is an independent project, not affiliated with or endorsed by Hyundai or Kia.</span>

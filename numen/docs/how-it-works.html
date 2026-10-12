@@ -6,8 +6,11 @@
 <title>Numen · How It Works</title>
 <meta name="description" content="How Numen chooses data sources, refreshes, records charges and trips, and routes in CarPlay.">
 <link rel="icon" href="../images/app-icon.png">
-<link rel="apple-touch-icon" href="../images/app-icon.png">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
 <script>try{var s=localStorage.getItem('color-scheme');if(s)document.documentElement.setAttribute('data-color-scheme',s)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="../assets/numen.css">
 <script src="../assets/numen.js" defer></script>
 </head>
@@ -15,11 +18,11 @@
 <header class="topbar">
   <div class="wrap">
     <button class="theme-btn menu-btn" type="button" aria-label="Show docs navigation" aria-expanded="false">☰</button>
-    <a class="brand" href="../"><img src="../images/app-icon.png" alt="">Numen <span style="color:var(--fg-tertiary);font-weight:500">Docs</span></a>
+    <a class="brand" href="../"><img src="../images/app-icon.png" alt="">Numen <em>Docs</em></a>
     <nav aria-label="Main">
       <a href="../" class="hide-sm">Overview</a>
-      <a href="./">Docs</a>
-      <a href="/" class="hide-sm">Jacob Pantuso</a>
+      <a href="release-notes.html" class="hide-sm">Release Notes</a>
+      <a href="getting-started.html#join" class="cta">Join the Beta</a>
       <button class="theme-btn" type="button" aria-label="Toggle colour scheme">☀</button>
     </nav>
   </div>
@@ -33,17 +36,17 @@
 <h4>Hardware</h4><ul>
 <li><a href="hardware.html">Hardware Setup</a></li>
 </ul>
-<h4>Inside the App</h4><ul>
+<h4>Using Numen</h4><ul>
 <li><a href="how-it-works.html" aria-current="page">How It Works</a></li>
-<li class="sub"><ul><li><a href="#sources">Data Sources</a></li><li><a href="#refresh">Refreshing</a></li><li><a href="#charging">Charge History</a></li><li><a href="#trips">Trips</a></li><li><a href="#carplay">CarPlay</a></li><li><a href="#cluster">Cluster and HUD</a></li><li><a href="#live-activities">Live Activities</a></li><li><a href="#widgets">Widgets and Watch</a></li><li><a href="#privacy">Your Data</a></li></ul></li>
+<li class="sub"><ul><li><a href="#sources">Data Sources</a></li><li><a href="#refresh">Refreshing</a></li><li><a href="#charging">Charge History</a></li><li><a href="#trips">Trips</a></li><li><a href="#carplay">CarPlay</a></li><li><a href="#cluster">Cluster and HUD</a></li><li><a href="#live-activities">Live Activities</a></li><li><a href="#widgets">Widgets and Watch</a></li><li><a href="#privacy">Your Data</a></li><li><a href="#themes">Themes</a></li></ul></li>
 </ul>
 <h4>Help</h4><ul>
 <li><a href="troubleshooting.html">Troubleshooting</a></li>
-<li><a href="index.html#release-notes">Release Notes</a></li>
+<li><a href="release-notes.html">Release Notes</a></li>
 </ul>
-<h4>More</h4><ul><li><a href="../">Numen Overview</a></li></ul>
 </aside>
 <main class="article">
+<div class="eyebrow">Using Numen</div>
 <h1>How It Works</h1>
 <p class="lead">Where each number comes from and how fresh it is.</p>
 
@@ -119,9 +122,14 @@
   <li>A bug report sends what you write, plus a short summary of the app's settings and state to help me reproduce it.</li>
 </ul>
 
+<h2 id="themes">Themes</h2>
+<p>Numen comes in five palettes, from bright Chalk to dark Midnight. Choose one in <span class="path">Settings › Theme</span>.</p>
+<div class="palettes"><div class="palette"><div class="swatch" style="background:#f4f3ef"><span class="bar" style="background:#ffffff"><i style="background:#3d3d3d"></i></span><span class="dots"><b style="background:#5cd65c"></b><b style="background:#ef6a3d"></b><b style="background:#2f3f30"></b><b style="background:#2a3a52"></b></span></div><h3>Chalk</h3><p>Bright and neutral</p></div><div class="palette"><div class="swatch" style="background:#edf1ec"><span class="bar" style="background:#f6f8f5"><i style="background:#3f4b44"></i></span><span class="dots"><b style="background:#5cd65c"></b><b style="background:#ef6a3d"></b><b style="background:#2f3f30"></b><b style="background:#2b4036"></b></span></div><h3>Sage</h3><p>Soft green</p></div><div class="palette"><div class="swatch" style="background:#f5efe8"><span class="bar" style="background:#fdfbf8"><i style="background:#4f433a"></i></span><span class="dots"><b style="background:#5cd65c"></b><b style="background:#ef6a3d"></b><b style="background:#36452f"></b><b style="background:#4a382c"></b></span></div><h3>Clay</h3><p>Warm sand</p></div><div class="palette"><div class="swatch" style="background:#eff1f4"><span class="bar" style="background:#ffffff"><i style="background:#3d4450"></i></span><span class="dots"><b style="background:#5cd65c"></b><b style="background:#ef6a3d"></b><b style="background:#203a52"></b><b style="background:#2d4c6e"></b></span></div><h3>Mist</h3><p>Cool blue-grey</p></div><div class="palette"><div class="swatch" style="background:#0c0c10"><span class="bar" style="background:#1f1f24"><i style="background:#d6d6d6"></i></span><span class="dots"><b style="background:#a6e36b"></b><b style="background:#e58b4a"></b><b style="background:#6fae8a"></b><b style="background:#8fb4d8"></b></span></div><h3>Midnight</h3><p>Dark</p></div></div>
+
 <nav class="pager" aria-label="Pages"><a href="hardware.html"><span>Previous</span>Hardware Setup</a><a class="next" href="troubleshooting.html"><span>Next</span>Troubleshooting</a></nav>
 </main>
 </div>
+
 <footer class="footer">
   <div class="wrap">
     <span>Numen is an independent project, not affiliated with or endorsed by Hyundai or Kia.</span>
