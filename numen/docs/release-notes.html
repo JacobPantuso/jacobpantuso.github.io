@@ -54,24 +54,24 @@
 <h3 id="build-20261015">October 15, 2026 · Build 20261015.0939</h3>
 <p><strong>New</strong></p>
 <ul>
-  <li><strong>More than one car.</strong> If your account has more than one car, pick which one you're looking at from the car menu on Home. Trips, charges and the parked spot are kept for each car, and with an OBD-II adapter Numen switches to whichever car you're in.</li>
-  <li><strong>CarPlay appearance.</strong> Choose whether CarPlay follows your iPhone's light and dark setting, follows your car, or stays dark. You'll find it in CarPlay under <span class="path">Settings › Display › Appearance</span>.</li>
-  <li><strong>Kia Connect.</strong> If you drive a Kia, Numen now calls it Kia Connect instead of Bluelink.</li>
-  <li><strong>Europe sign-in.</strong> Hyundai and Kia changed how European accounts sign in, and the old way stopped working in August. Numen now uses the new sign-in.</li>
+  <li><strong>Multiple cars.</strong> Every car on the account, switched from the car menu on Home. Trips, charges and parked location are stored per VIN. A paired OBD-II adapter switches to its own car when it connects.</li>
+  <li><strong>CarPlay appearance.</strong> Match iPhone (default), Match Car or Always Dark, in CarPlay <span class="path">Settings › Display › Appearance</span>. Match Car follows the head unit's day/night signal, which on the IONIQ 6 comes from the ambient light sensor, not the headlights.</li>
+  <li><strong>Kia Connect.</strong> Kia accounts are labelled Kia Connect instead of Bluelink.</li>
+  <li><strong>Europe sign-in.</strong> Hyundai and Kia's EU login has rejected the legacy password flow since August 11. Numen now uses the OneApp login.</li>
 </ul>
 <p><strong>Fixed</strong></p>
 <ul>
-  <li>The Trip Planner now picks fast chargers first, and only suggests a 50 kW charger when nothing faster is in reach.</li>
-  <li>Your preferred charging networks now count. Electrify Canada stations were being missed, so dealer chargers were suggested instead.</li>
-  <li>Charging times are realistic for each charger. A 50 kW charger used to show 12% to 80% in 18 minutes; it's over an hour.</li>
-  <li>CarPlay only plans stops at chargers your car can plug into, and skips Tesla sites that don't let other cars charge.</li>
-  <li>Miles and °F now apply everywhere: the app, CarPlay, widgets and Live Activities. With miles selected, the CarPlay speed limit shows mph, and directions in the cluster and HUD show miles and feet.</li>
-  <li>Climate no longer shows as running hours after a drive.</li>
-  <li>A ride in a taxi or someone else's car is no longer saved as one of your drives, and no longer moves where your car is parked.</li>
-  <li>Outside Canada, climate temperatures were read as Fahrenheit when they were Celsius.</li>
-  <li>Without Bluelink, refreshing reads your OBD-II adapter, and the widget and Watch hide the lock, climate and charge buttons.</li>
-  <li>Horn and lights now say they aren't available for European cars, instead of failing.</li>
-  <li>The tire setting is now a quick menu instead of its own page.</li>
+  <li>Charge times assumed 150 kW at every charger. A 50 kW charger showed 12–80% in 18 minutes; it's over an hour. Times now follow the IONIQ 6's DC curve (235 kW peak), capped at 90% of the charger's rated power. 10–80% at 350 kW is 19 minutes.</li>
+  <li>The Trip Planner picked the furthest charger in range regardless of power. Stops now rank 100 kW+ on a preferred network, then 100 kW+, then slower chargers.</li>
+  <li>Preferred networks were matched on the station name, which Open Charge Map usually sets to the host business ("Walmart"), so Electrify Canada never matched. They're now matched on the network operator.</li>
+  <li>CarPlay charging plans could include CHAdeMO-only and Tesla-only sites. Plans are now limited to CCS1, plus NACS with the adapter.</li>
+  <li>Distance and temperature units were ignored outside a few screens. They now apply to the app, CarPlay, widgets and Live Activities. The CarPlay speed limit converts to mph (labelled MPH), and cluster and HUD distances show mi, or ft under 0.1 mi.</li>
+  <li>Remote climate kept showing as running after a drive when Bluelink couldn't reach the car. It now ends at its set duration, or once the OBD-II adapter has read the car since.</li>
+  <li>Rides in other vehicles were saved as drives and moved the parked location. With an OBD-II adapter or CarPlay set up, a trip only counts if one of them saw the car on during it.</li>
+  <li>Outside Canada, the climate temperature unit was read inverted, so °C showed as °F.</li>
+  <li>Without Bluelink, refresh now polls the OBD-II adapter, and the widget and Watch hide lock, climate and charge.</li>
+  <li>Horn and lights on EU cars returned an error. They're now reported as unsupported.</li>
+  <li>Tires is a menu in Settings instead of a separate page.</li>
 </ul>
 
 <h3 id="build-20261014">October 14, 2026 · Build 20261014.1003</h3>
