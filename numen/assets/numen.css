@@ -256,12 +256,31 @@ figcaption b, .hud figcaption span { color: var(--fg); font-weight: 500; }
   .btn, .pager a, .sidebar a { transition: filter 0.15s ease, border-color 0.15s ease, color 0.15s ease; }
 }
 
-/* Support card: quieter than the join card above it, so the beta stays the main ask. */
-.support { margin-bottom: 96px; padding: 48px 64px; border-radius: 28px; background: var(--bg-raised); border: 1px solid var(--divider); display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: end; }
-.support h2 { font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.03em; }
-.support p { color: var(--fg-secondary); margin-top: 14px; }
-.support .btn { justify-self: end; }
+/* Announcement banner above the hero, like a Markdown callout: accent bar, icon,
+   bold lead-in. The whole banner is the link. */
+.announce { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; column-gap: 14px; row-gap: 6px;
+  align-items: center; margin-top: 28px; padding: 16px 20px;
+  border: 1px solid var(--divider); border-left: 3px solid var(--signal); border-radius: 14px;
+  background: var(--bg-raised); color: var(--fg-secondary); font-size: 15px; line-height: 1.5;
+  transition: border-color .2s ease, box-shadow .2s ease; }
+.announce:hover { text-decoration: none; border-color: var(--signal);
+  box-shadow: 0 0 0 1px var(--signal), 0 0 28px color-mix(in srgb, var(--signal) 35%, transparent); }
+.announce-icon { font-size: 22px; line-height: 1; }
+.announce b { color: var(--fg); font-weight: 600; }
+.announce-cta { padding-left: 12px; white-space: nowrap; color: var(--signal-text); font-weight: 500; }
+
+/* The join card is one link: no button, an orange glow on hover. */
+a.join { color: var(--cream); transition: box-shadow .2s ease, border-color .2s ease, transform .2s ease; }
+a.join:hover { text-decoration: none; border-color: var(--signal);
+  box-shadow: 0 0 0 1px var(--signal), 0 0 40px color-mix(in srgb, var(--signal) 40%, transparent); }
+.join-cta { justify-self: end; font-weight: 500; font-size: 17px; color: var(--signal); white-space: nowrap; }
+:root[data-color-scheme="dark"] a.join { color: var(--fg); }
+@media (prefers-color-scheme: dark) { :root:not([data-color-scheme="light"]) a.join { color: var(--fg); } }
+
 @media (max-width: 860px) {
-  .support { grid-template-columns: minmax(0, 1fr); padding: 32px; }
-  .support .btn { justify-self: start; }
+  /* Icon stays beside the text; the link drops under it. */
+  .announce { grid-template-columns: auto minmax(0, 1fr); align-items: start; }
+  .announce-icon { grid-row: span 2; }
+  .announce-cta { grid-column: 2; padding-left: 0; }
+  .join-cta { justify-self: start; }
 }
