@@ -52,6 +52,36 @@
 
 <h2 id="v1-0">Version 1.0</h2>
 
+<h3 id="build-20261016-1429">October 16, 2026 · Build 20261016.1429</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Car image.</strong> The car is drawn in its own body style and paint colour.</li>
+  <li><strong>Remove Vehicle.</strong> In <span class="path">Settings › Vehicle</span>, including the only car on the account. A removed car can be added back from the same section. (#2)</li>
+  <li><strong>Climate quick action.</strong> The climate button on Home is a menu: with climate off, your presets, each confirmed before it starts; with climate on, Stop Climate.</li>
+  <li><strong>Quick Start.</strong> Start Climate on the Climate screen opens a half sheet of presets, confirmed with Face ID.</li>
+  <li><strong>Preferred Chargers by region.</strong> The list shows only the networks in the account's region: Canada, the US or Europe. Electrify America is its own network.</li>
+  <li><strong>Buy Me a Coffee.</strong> A link at the bottom of Settings.</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>EU: climate showed as off seconds after starting it. The refresh after the command returned Hyundai's copy of the car's state from before the start. A reading older than the last start or stop no longer overrides it, including defrost and temperature. (#7)</li>
+  <li>EU: Hyundai cars on the newer (ccs2) status format showed Locked while unlocked, and the reverse.</li>
+  <li>EU: the Trip Planner searched for CCS1 plugs, so a route from Amsterdam found 1 charger within 30 km instead of 47. EU accounts search for CCS2, and the NACS adapter setting is hidden.</li>
+  <li>EU: Honk and Flash are removed from Home.</li>
+  <li>EU: sign-in errors are in plain words, e.g. "Hyundai didn't accept that email or password".</li>
+  <li>Slower OBD-II adapters timed out on every read. A reply that arrived after its 3.5 s timeout was taken as the answer to the next command, so every reply after it was one behind. Late replies are now dropped, and data reads get 6 s. (#6)</li>
+  <li>Turning off Face ID in Settings didn't stop vehicle commands from asking for it.</li>
+  <li>Defrost and Heated Steering showed On while climate was off.</li>
+  <li>The climate Live Activity shows Climate Ended at its end time and clears on the next refresh.</li>
+  <li>The climate button on Home disappeared while the climate sheet was open.</li>
+  <li>Amsterdam → Brussels on 53% planned a stop 24 km in, because only chargers near the start were known. The planner now searches along the route whenever none sit in the far half of the current range; that trip stops at 136 km.</li>
+  <li>A dealer entered by hand couldn't be saved.</li>
+  <li>The sign-in email kept the trailing space the keyboard's suggestion adds.</li>
+  <li>CarPlay: Keyboard and Voice search cancelled Add Stop, and after reconnecting, a trip with a stop went straight to the destination.</li>
+  <li>CarPlay: directions stayed on the cluster and HUD after CarPlay disconnected mid-drive.</li>
+  <li>CarPlay: lane and roundabout arrows on the Dashboard's light guidance card are black.</li>
+</ul>
+
 <h3 id="build-20261015-1027">October 15, 2026 · Build 20261015.1027</h3>
 <p><strong>Fixed</strong></p>
 <ul>
