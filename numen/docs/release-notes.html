@@ -52,6 +52,39 @@
 
 <h2 id="v1-0">Version 1.0</h2>
 
+<h3 id="build-20261017-1536">October 17, 2026 · Build 20261017.1536</h3>
+<p>Thank you everyone for your patience while I continue to iron out initial connectivity issues with Numen.</p>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Shake to Report.</strong> Shake your phone anywhere in Numen to report a bug. Reports include the logs and device details TestFlight feedback leaves out.</li>
+  <li><strong>ALPHA-TESTING Walk-Away Lock.</strong> In <span class="path">Settings › Auto-Lock</span>. Locks the car through the WiCAN as you walk away after a drive, with no Shortcut required.</li>
+  <li><strong>Faster locking.</strong> With the WiCAN connected, locks go through it before Bluelink.</li>
+  <li><strong>Seats.</strong> The Climate screen shows each seat’s heat and ventilation, and Siri can set them. Just say “Siri, set my seat heater to high in Numen”. Siri defaults to driver location.</li>
+  <li>In <span class="path">Settings › OBD Adapter › Preconditioning Adapter</span> you can now configure the WiCAN directly from Numen without needing to access the web portal.</li>
+  <li>CarPlay: a Battery Preheated chip when the battery is already warm.</li>
+  <li>CarPlay: on the Dashboard, the preconditioning chip sits top left with incidents below it.</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>EU: commands failed with “No vehicle selected” after the app had been closed for a while. This was caused by the app not reliably using the refreshToken provided back by Hyundai/Kia.</li>
+  <li>EU: Hyundai lock status is back to how it read before the last build. Some users still may be reporting inaccuracies. Please file a bug through the app directly!!</li>
+  <li>The car image could show the wrong model.</li>
+  <li>Richer error messaging.</li>
+  <li>Charging estimations via OBD-II were wildly inaccurate.</li>
+  <li>Preconditioning started from the car’s own button took a while to show. This latency is now completely eliminated.</li>
+  <li>Some WiCAN OBD-II adapters timed out on every read when using in the OBD port.</li>
+  <li>Bluelink Service in Settings now checks the right server for your region.</li>
+  <li>Range Estimates: short trips now match their “Off by” figure.</li>
+  <li>CarPlay: the arrival card’s text was hard to read after switching between light and dark.</li>
+</ul>
+<p><strong>Known Issues</strong></p>
+<ul>
+  <li>Range can read low with an OBD-II adapter after a few short or cold trips. If you see it, shake your phone to send a report. See how you are doing in <span class="path">Settings › Range Estimates</span>. Numen learns as you drive since there is no way to directly query available range via OBD.</li>
+  <li>Siri seat commands may not respond. The Climate screen and the Shortcuts app work.</li>
+  <li>EU API issues. European users may still see inconsistencies with their vehicle status, I’m trying my best to resolve these issues ASAP.</li>
+  <li>EU features: I am aware that European users have access to more controls than NA for example. I am working on including these... Submit a bug report if you notice something that’s missing!</li>
+</ul>
+
 <h3 id="build-20261016-1429">October 16, 2026 · Build 20261016.1429</h3>
 <p><strong>New</strong></p>
 <ul>
