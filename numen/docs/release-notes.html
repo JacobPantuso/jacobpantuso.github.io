@@ -52,6 +52,46 @@
 
 <h2 id="v1-0">Version 1.0</h2>
 
+<h3 id="build-20261020-1930">October 20, 2026 · Build 20261020.1930</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Command status.</strong> A chip above the tab bar follows every command you send: Sent, Busy, Retrying, then Done or Timed Out. Swipe it away anytime.</li>
+  <li><strong>Seats in Climate presets and Quick Start.</strong> Heat or cool the driver and passenger seats when climate starts. Available in Canada, the US and Europe on supported vehicles. (#18)</li>
+  <li><strong>Shortcuts.</strong> Get Current Status, Fetch Vehicle Status and Start Climate actions. Start Climate can use your last settings or a preset. (#21)</li>
+  <li><strong>Your car on the widget.</strong> The home screen widget now shows your model and colour.</li>
+  <li><strong>Signing in.</strong> Home now shows “Signing in to Bluelink…” while the app reconnects, and recovers faster if the connection stalls. (#14, #17)</li>
+  <li>Climate presets are hidden while CarPlay is connected.</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>Climate presets and Quick Start never turned on the steering wheel heater or rear defrost.</li>
+  <li>Notifications ignored your temperature unit.</li>
+  <li>Range and odometer showed the wrong units for US accounts. (#10, #12, #16)</li>
+  <li>Tapping the charging Live Activity stopped the charge. (#13)</li>
+  <li>Widget and Live Activity buttons didn’t ask for Face ID.</li>
+  <li>The lock screen widget could show unlocked while the app showed locked.</li>
+  <li>EU: lock and unlock flipped back to the wrong state after a command. (#15)</li>
+  <li>Siri: “turn my seat heater off” kept asking for a level.</li>
+  <li>Walk-Away Lock sent two notifications, and reported “Lock Failed” when it had locked.</li>
+  <li>Charging sessions were labelled with where the drive started, not where you parked.</li>
+  <li>Trip Planner: short trips that needed a charge planned no stop and arrived at 0%. It now finds a charger, or tells you when it can’t.</li>
+  <li>CarPlay: lane arrows were the wrong colour after switching between light and dark.</li>
+  <li>CarPlay: turn cards showed the wrong road name on some turns and highway stretches.</li>
+  <li>CarPlay: the route line could shift out of place on the map.</li>
+  <li>CarPlay: alert icons were cut off.</li>
+</ul>
+<p><strong>Developer</strong></p>
+<ul>
+  <li>Live Route Line for the Dashboard, in <span class="path">Settings › Developer</span>.</li>
+  <li>Every developer tool is now available in TestFlight builds: OBD Console, OBD Simulators and Bluelink charge controls.</li>
+  <li>Bug reports carry much more detail on commands, status updates and routes, with saved place names removed.</li>
+</ul>
+<p><strong>Known Issues</strong></p>
+<ul>
+  <li>Preconditioning can show a second countdown before it starts. A WiCAN firmware update with a longer wait is ready, but hasn’t been sent to anyone yet.</li>
+  <li>EU: some vehicles may still report status inconsistently. Please send a report through the app if you see it.</li>
+</ul>
+
 <h3 id="build-20261017-1536">October 17, 2026 · Build 20261017.1536</h3>
 <p>Thank you everyone for your patience while I continue to iron out initial connectivity issues with Numen.</p>
 <p><strong>New</strong></p>
