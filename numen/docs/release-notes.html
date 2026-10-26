@@ -52,6 +52,47 @@
 
 <h2 id="v1-0">Version 1.0</h2>
 
+<h3 id="build-20261026-0950">October 26, 2026 · Build 20261026.0950</h3>
+<p>Thank you for all the bug reports this week. Most of this build came straight from them.</p>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Update your WiCAN from Numen.</strong> When a firmware update is ready, tap <strong>Update Adapter</strong> in <span class="path">Settings › OBD Adapter</span>. It takes about a minute. <strong>Heads up:</strong> this only works once your WiCAN is already running the Numen firmware. If you haven’t flashed it yet, install the <a href="https://github.com/JacobPantuso/wicant-i-precondition/releases/latest">latest Numen firmware release</a> from the WiCAN’s local web page first, and every update after that comes through the app.</li>
+  <li><strong>Vehicle Location widget.</strong> See where your car is on a small map, with the address and whether it’s parked or driving. Available on the Home Screen and Lock Screen.</li>
+  <li><strong>Climate duration.</strong> Choose how long climate runs (5, 10, 15, 20 or 30 minutes) in Quick Start. Presets, Siri, widgets and the Watch all use it, and the Live Activity counts down to match.</li>
+  <li><strong>Walk-Away Lock distance.</strong> Pick Short, Medium or Long in <span class="path">Settings › Auto-Lock</span>, or tap <strong>Set From Where You’re Standing</strong> to use your own spot.</li>
+  <li><strong>Surround View in the US.</strong> Hyundai and Kia US accounts can now take surround view captures. I don’t have a US account to test with, so please send a report if it doesn’t work for you. (#22)</li>
+  <li><strong>Search in Navigate.</strong> Search now shows you a list of results on the map instead of jumping to the first one. Search a network like “Flo” or “ChargePoint” to see only its chargers. (#28)</li>
+  <li>Trip Planner shows your Arrival SOC in the route header.</li>
+  <li>Trip Planner now skips a slow charger for a fast one just a little further on, and shows each stop’s charging network. (#20)</li>
+  <li>Recent trips show efficiency instead of average speed. (#23)</li>
+  <li>CarPlay: Search shows three categories plus See All Categories, and Recents always keeps two rows.</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>Charging history added charges that never happened. A bad reading from the OBD-II adapter right as it connected could show up as a charge from 0%. Those charges are removed automatically. (#25)</li>
+  <li>EU: sign-in said your email or password was wrong when it wasn’t. Since October 22, Hyundai and Kia’s EU sign-in rejects the browser identity Numen was sending. (#26)</li>
+  <li>Navigate stopped finding chargers when you zoomed out or moved the map. (#27)</li>
+  <li>Before you signed in, Navigate searched around downtown Toronto instead of where you are.</li>
+  <li>Preconditioning could show a second countdown before it started. The car takes a little longer to confirm than the firmware waited, so it sent the start again. Fixed in the WiCAN firmware bundled with this build, so tap <strong>Update Adapter</strong> to get it.</li>
+  <li>With the new firmware, the cluster and HUD no longer show the car’s own preconditioning countdown while Numen is connected, so your CarPlay directions stay on screen. Numen shows the countdown on its CarPlay chip instead.</li>
+  <li>Start Climate from Shortcuts didn’t start the Live Activity.</li>
+  <li>Trip Planner’s arrival estimate could stay on its first guess after the route was refined.</li>
+  <li>CarPlay: Dashboard lane arrows didn’t follow light and dark mode.</li>
+</ul>
+<p><strong>Developer</strong></p>
+<ul>
+  <li>Cluster Codes can send the route frame the car uses to recalculate range for a route.</li>
+</ul>
+<p><strong>Removed</strong></p>
+<ul>
+  <li>EU: Surround View is hidden while I work out how it works in Europe.</li>
+</ul>
+<p><strong>Known Issues</strong></p>
+<ul>
+  <li>EU Surround View: I can’t find how the European apps request a capture. If you’re in Europe and can capture the official Hyundai or Kia app’s traffic while it takes a surround view, please get in touch!</li>
+  <li>EU API issues. European users may still see some inconsistencies with their vehicle status. Please keep sending reports through the app.</li>
+</ul>
+
 <h3 id="build-20261020-1950">October 20, 2026 · Build 20261020.1950</h3>
 <p><strong>New</strong></p>
 <ul>
