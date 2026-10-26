@@ -85,7 +85,7 @@
 <h3>What You Need</h3>
 <ul>
   <li>The <a href="https://github.com/tylerharvey/Ioniq5_CAN">Ioniq5_CAN</a> harness kit, installed behind the head unit, with its WiCAN on the multimedia CAN bus.</li>
-  <li>The WiCAN flashed with the <code>feature/myIONIQ</code> branch of <a href="https://github.com/JacobPantuso/wicant-i-precondition">my firmware fork</a>. Stock firmware only starts preconditioning from a physical button; the fork adds a command so the app can start, stop and check on it over Bluetooth. Build and flash steps are in that repo.</li>
+  <li>The WiCAN running the <code>firmware/Numen</code> branch of <a href="https://github.com/JacobPantuso/wicant-i-precondition">my firmware fork</a>. Stock firmware only starts preconditioning from a physical button; the fork adds a command so the app can start, stop and check on it over Bluetooth. Install the <a href="https://github.com/JacobPantuso/wicant-i-precondition/releases/latest">latest release</a> once from the WiCAN's web page, no build needed. After that, Numen updates it for you.</li>
   <li>For <strong>Auto-Precondition on DC-Fast Route</strong>, the OBD-II adapter too, and a Numen route in CarPlay that ends at a DC fast charger.</li>
 </ul>
 <h3>Setting It Up</h3>
@@ -93,6 +93,7 @@
   <li>With the car on, open <span class="path">Settings › OBD Adapter</span> and tap <strong>Scan for Harness Adapter</strong>.</li>
   <li>Choose the WiCAN and accept the iOS pairing prompt.</li>
   <li><strong>Precondition Battery</strong> now appears on the Charge screen. Turn on <strong>Auto-Precondition on DC-Fast Route</strong> in Settings if you want it to start by itself.</li>
+  <li>When a firmware update is ready, <strong>Update Adapter</strong> appears under the adapter in <span class="path">Settings › OBD Adapter</span>. It takes about a minute. Keep Numen open while your phone joins the adapter's Wi-Fi.</li>
 </ol>
 <div class="shots"><figure><img src="../images/app-home.jpg" alt="While the battery warms, the home screen's status band says so." loading="lazy" width="598" height="1300"><figcaption>While the battery warms, the home screen's status band says so.</figcaption></figure><figure><img src="../images/app-charge-precondition.jpg" alt="The Charge screen shows pack temperatures and a button to stop." loading="lazy" width="598" height="1300"><figcaption>The Charge screen shows pack temperatures and a button to stop.</figcaption></figure></div>
 <h3>Good to Know</h3>
@@ -110,7 +111,7 @@
 </div>
 <h3>What You Need</h3>
 <ul>
-  <li>The harness adapter running the <code>feature/myIONIQ</code> firmware described above. Older firmware doesn't offer the toggle.</li>
+  <li>The harness adapter running the <code>firmware/Numen</code> firmware described above. Older firmware doesn't offer the toggle.</li>
   <li>The OBD-II adapter, because cluster directions follow a Numen route in CarPlay. Apple Maps and other CarPlay apps don't send directions to the cluster.</li>
   <li>The frame layouts were decoded on an IONIQ 6. Lanes and arrows on the HUD need a car fitted with one.</li>
 </ul>
