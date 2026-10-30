@@ -52,6 +52,33 @@
 
 <h2 id="v1-0">Version 1.0</h2>
 
+<h3 id="build-20261030-1642">October 30, 2026 · Build 20261030.1642</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Share Vehicle.</strong> Share your car with the household from <span class="path">Settings › Vehicle › Share Vehicle</span>. Everyone’s trips and charges sync into one history. Your Bluelink sign-in is never shared.</li>
+  <li><strong>ALPHA-TESTING Unlock through the WiCAN.</strong> Unlock goes to the harness WiCAN over Bluetooth first, then Bluelink — so it’s faster, and works even when Bluelink is down.</li>
+  <li><strong>A faster charger map.</strong> Chargers in Navigate cluster as you zoom out, and tapping one shows its connectors, charge time to 80%, network, spaces, cost and status.</li>
+  <li><strong>ALPHA-TESTING Learn Vehicle Boundaries.</strong> Replaces Set From Where You’re Standing in <span class="path">Settings › Auto-Lock</span>: walk a lap around the car and Numen sets the Walk-Away Lock distance just past its weakest spot.</li>
+  <li><strong>ALPHA-TESTING Updating the WiCAN from the app.</strong> Updates now show each step — Installing, Verifying, Restarting — and when it was last updated. If your WiCAN’s firmware is too old to update from the app, Numen lets you know and links to the latest release.</li>
+  <li>CarPlay: the Dashboard always draws the live route line.</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>Walk-Away Lock could lock while you walked around the front of the car. It now holds longer and ignores brief signal dips.</li>
+  <li>The charging Live Activity could stick around after the charge ended. (#30)</li>
+  <li>The 12V battery row showed the main battery’s charge. (#32)</li>
+  <li>Car status refreshed too slowly while the app was open. (#33)</li>
+  <li>Fetch Vehicle Status in Shortcuts could time out instead of answering with the last status. (#34)</li>
+  <li>Shortcuts and the Watch reported the car as unauthenticated after force-quitting Numen. (#35)</li>
+  <li>Climate started from a widget or the Watch used the car’s default temperature instead of your last settings. (#36)</li>
+  <li>Some trips didn’t appear in Recents until the next launch. (#37)</li>
+  <li>A “not signed in” error when a command ran while Numen was signing back in. (#38)</li>
+  <li>Walking back to the car mid-charge could split one charge into two.</li>
+  <li>Trip Planner’s charging-stop bar counted stops where you didn’t charge.</li>
+  <li>CarPlay: the Dashboard pin could sit off the route line, and arrival now reads “Arrived”.</li>
+  <li>Cluster/HUD: cleaner left and right arrows on one-lane roads. (#24)</li>
+</ul>
+
 <span id="build-20261026-0950"></span>
 <h3 id="build-20261026-1000">October 26, 2026 · Build 20261026.1000</h3>
 <p>Thank you for all the bug reports this week. Most of this build came straight from them.</p>
