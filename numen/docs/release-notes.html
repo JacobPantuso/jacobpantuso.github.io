@@ -52,6 +52,35 @@
 
 <h2 id="v1-0">Version 1.0</h2>
 
+<h3 id="build-20261105-2138">November 5, 2026 · Build 20261105.2138</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Live charger availability.</strong> Chargers in Navigate and CarPlay show how many spots are free, the price and the charge time. Canada only for now.</li>
+  <li><strong>ALPHA-TESTING WiCAN Locks on Disconnect.</strong> A WiCAN on the harness, running the Numen firmware, can lock the car itself when your phone drops out of range. Turn it on in <span class="path">Settings › Auto-Lock</span>. Numen also sends a Bluelink lock as a backup.</li>
+  <li><strong>Clearer lock notifications.</strong> Auto-Lock now tells you whether the lock was confirmed, couldn’t be confirmed, or failed, and a failed lock retries when the WiCAN reconnects.</li>
+  <li>CarPlay: construction and incident cards show where the zone ends.</li>
+  <li>CarPlay: the battery chip shows when preconditioning is starting.</li>
+  <li>Trip details show when you were stopped, and the battery bar shows how much you used or gained.</li>
+  <li>The battery warm-up card uses the outside temperature to say when your battery is likely too cold for full fast-charging speed.</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>The charging Live Activity didn’t update in the background. (#31)</li>
+  <li>Opening Numen during a charge could leave two charging Live Activities on the Lock Screen. (#43)</li>
+  <li>Climate failed when sent while Numen was still signing in. It now waits and retries. (#42)</li>
+  <li>“Open in Trip Planner” from the Apple Maps share sheet did nothing. (#40)</li>
+  <li>Auto-precondition could stay armed for a drive and never start.</li>
+  <li>Trip Planner charged every stop to 80%. Each stop now charges to what the next leg needs.</li>
+  <li>Preferred Dealer only found Hyundai dealers, and the setup screen had no way out.</li>
+  <li>Report a Bug wouldn’t send unless both the summary and description were filled in.</li>
+  <li>The Location card said “Parked” while you were driving.</li>
+  <li>Smoother panning and zooming on the Navigate map.</li>
+  <li>CarPlay could show a charging Live Activity during strong regen.</li>
+  <li>CarPlay: the map could stay off follow mode after browsing or searching.</li>
+  <li>Cluster/HUD: straight and exit arrows on the same lane no longer overlap.</li>
+  <li>Walk-Away Lock reacts faster, and Medium sensitivity reaches a little further.</li>
+</ul>
+
 <h3 id="build-20261030-1642">October 30, 2026 · Build 20261030.1642</h3>
 <p><strong>New</strong></p>
 <ul>
