@@ -52,6 +52,27 @@
 
 <h2 id="v1-0">Version 1.0</h2>
 
+<h3 id="build-20261111-0041">November 11, 2026 · Build 20261111.0041</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Guided adapter pairing.</strong> Adding an OBD-II adapter or a WiCAN walks you through it and checks the adapter answers before keeping it. (#47)</li>
+  <li><strong>ALPHA-TESTING WiCAN updates over Bluetooth.</strong> A WiCAN on the harness, running the Numen firmware, can now update with the car on and CarPlay connected.</li>
+  <li><strong>ALPHA-TESTING Walk-Away Lock on the WiCAN.</strong> The WiCAN decides when you’ve walked away and locks the car itself. If it isn’t ready, Numen locks instead.</li>
+  <li>Trip Planner stops that aren’t chargers carry over to CarPlay, and the Dashboard shows stop pins.</li>
+  <li>CarPlay: voice destinations look near you first.</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>Fetch Vehicle Status said it couldn’t reach the car on cars without Surround View. (#48)</li>
+  <li>CarPlay showed demo battery and range when you use Numen without a Bluelink account. (#49)</li>
+  <li>Queued commands like climate start could wait until you opened Numen before running. (#51)</li>
+  <li>Kia US: Numen asked for a verification code again every day, and a wrong code showed a confusing error.</li>
+  <li>“Open in Trip Planner” from the share sheet still didn’t open Numen. (#44)</li>
+  <li>A freshly flashed WiCAN couldn’t pair until its settings were changed by hand. (#47)</li>
+  <li>Walk-Away Lock could lock the car as you walked back to it. It also locks sooner once you walk off, and waits while the car is still on.</li>
+  <li>Updating the WiCAN with CarPlay connected failed with “the adapter didn’t answer”.</li>
+</ul>
+
 <h3 id="build-20261105-2138">November 5, 2026 · Build 20261105.2138</h3>
 <p><strong>New</strong></p>
 <ul>
